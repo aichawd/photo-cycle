@@ -2,7 +2,7 @@ require "open-uri"
 require "nokogiri"
 
 PhotoCategory.destroy_all
-Photo.destroy_all
+Picture.destroy_all
 Category.destroy_all
 User.destroy_all
 
@@ -49,165 +49,124 @@ aicha.photo.attach(io: img, filename: "aicha.jpg", content_type: 'image/jpg')
 aicha.save!
 
 # create categories
-Category.create(name: "Portrait")
+portrait = Category.create(name: "Portrait")
 
-Category.create(name: "Landscape")
+landscape = Category.create(name: "Landscape")
 
-Category.create(name: "Black & White")
+black_and_white = Category.create(name: "Black & White")
 
-Category.create(name: "Desert")
+desert = Category.create(name: "Desert")
 
-Category.create(name: "Forest")
+forest = Category.create(name: "Forest")
 
-Category.create(name: "Beach")
+beach = Category.create(name: "Beach")
 
 # Portraits Paul & Bruno
 
-photo_unsplash = Photo.new
+photo_unsplash = Picture.new
 img_url = 'https://images.unsplash.com/photo-1560787313-5dff3307e257?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = paul
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
-photo_unsplash_category.photo = photo_unsplash
-photo_unsplash_category.category = Category.find(1)
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = portrait
 photo_unsplash_category.save!
 
 
 
-photo_unsplash = Photo.new
+photo_unsplash = Picture.new
 img_url = 'https://images.unsplash.com/photo-1444069069008-83a57aac43ac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
-photo_unsplash.user = Paul
+photo_unsplash.user = paul
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
-photo_unsplash_category.photo = photo_unsplash
-photo_unsplash_category.category = Category.find(1)
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = portrait
 photo_unsplash_category.save!
 
 
 
 
-photo_unsplash = Photo.new
+photo_unsplash = Picture.new
 img_url = 'https://images.unsplash.com/photo-1488820098099-8d4a4723a490?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = bruno
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
-photo_unsplash_category.photo = photo_unsplash
-photo_unsplash_category.category = Category.find(1)
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = portrait
 photo_unsplash_category.save!
 
 
 
 
-photo_unsplash = Photo.new
+photo_unsplash = Picture.new
 img_url = 'https://images.unsplash.com/photo-1599925002316-82ab470937ce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = bruno
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
-photo_unsplash_category.photo = photo_unsplash
-photo_unsplash_category.category = Category.find(1)
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = portrait
 photo_unsplash_category.save!
 
 
 
 
-photo_unsplash = Photo.new
+photo_unsplash = Picture.new
 img_url = 'https://images.unsplash.com/photo-1544124094-8aea0374da93?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1400&q=80'
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = paul
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
-photo_unsplash_category.photo = photo_unsplash
-photo_unsplash_category.category = Category.find(1)
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = portrait
 photo_unsplash_category.save!
 
 
 
 
-photo_unsplash = Photo.new
+photo_unsplash = Picture.new
 img_url = 'https://images.unsplash.com/photo-1562457753-6867bda028cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1466&q=80'
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = paul
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
-photo_unsplash_category.photo = photo_unsplash
-photo_unsplash_category.category = Category.find(1)
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = portrait
 photo_unsplash_category.save!
 
 
 
 
-photo_unsplash = Photo.new
+photo_unsplash = Picture.new
 img_url = 'https://images.unsplash.com/photo-1578254090783-31fa81462b73?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80'
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = bruno
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
-photo_unsplash_category.photo = photo_unsplash
-photo_unsplash_category.category = Category.find(1)
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = portrait
 photo_unsplash_category.save!
 
 
 
 
-photo_unsplash = Photo.new
+photo_unsplash = Picture.new
 img_url = 'https://images.unsplash.com/photo-1441886367417-1c946b32a980?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1752&q=80'
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = bruno
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
-photo_unsplash_category.photo = photo_unsplash
-photo_unsplash_category.category = Category.find(1)
-photo_unsplash_category.save!
-
-
-
-# Landscape Aicha & Alex
-photo_unsplash = Photo.new
-img_url = ''
-file = URI.open(img_url)
-photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
-photo_unsplash.user = #username
-photo_unsplash.save!
-photo_unsplash_category = PhotoCategory.new
-photo_unsplash_category.photo = photo_unsplash
-photo_unsplash_category.category = Category.find()
-photo_unsplash_category.save!
-
-
-
-
-photo_unsplash = Photo.new
-img_url = ''
-file = URI.open(img_url)
-photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
-photo_unsplash.user = #username
-photo_unsplash.save!
-photo_unsplash_category = PhotoCategory.new
-photo_unsplash_category.photo = photo_unsplash
-photo_unsplash_category.category = Category.find()
-photo_unsplash_category.save!
-
-
-
-photo_unsplash = Photo.new
-img_url = ''
-file = URI.open(img_url)
-photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
-photo_unsplash.user = #username
-photo_unsplash.save!
-photo_unsplash_category = PhotoCategory.new
-photo_unsplash_category.photo = photo_unsplash
-photo_unsplash_category.category = Category.find()
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = portrait
 photo_unsplash_category.save!
