@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  get '/:username', to: 'photos#user_gallery'
+  get '/:username', to: 'pictures#user_gallery'
 
   root to: 'pages#home'
   resources :users, only: [:index]

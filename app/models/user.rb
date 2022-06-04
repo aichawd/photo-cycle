@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :photos
+  has_many :pictures
   has_one_attached :photo
 
   validates :username, uniqueness: true
