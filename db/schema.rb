@@ -34,7 +34,8 @@ ActiveRecord::Schema.define(version: 2022_06_04_103504) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["conversation_id"], name: "index_personal_messages_on_conversation_id"
     t.index ["user_id"], name: "index_personal_messages_on_user_id"
-
+  end
+  
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
