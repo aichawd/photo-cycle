@@ -1,7 +1,8 @@
 <%= @user.first_name %>
 <%= @user.last_name %>
 <%= @user.username %>
+<%= @user_pictures.count %>
 
 <% @user_pictures.each do |pic| %>
-  <%= cl_image_tag pic.photo.key, height: 300, crop: :fill %>
+  <%= cl_image_tag pic.photo.key %>
 <% end %>
