@@ -1,0 +1,8 @@
+<h1><%= @collab.name %></h1>
+<%= @artist1.username %>
+<%= @artist1.username %>
+<%= @collab_pictures.count %>
+
+<% @collab_pictures.each do |pic| %>
+  <%= cl_image_tag pic.photo.key %>
+<% end %>
