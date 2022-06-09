@@ -10,7 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 2022_06_09_173032) do
 
   # These are extensions that must be enabled in order to support this database
@@ -50,13 +49,21 @@ ActiveRecord::Schema.define(version: 2022_06_09_173032) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-
   create_table "chatrooms", force: :cascade do |t|
     t.string "name"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_chatrooms_on_user_id"
+  end
+
+  create_table "collaborations", force: :cascade do |t|
+    t.string "name"
+    t.integer "status", default: 0
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "artist1_id"
+    t.integer "artist2_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -67,15 +74,6 @@ ActiveRecord::Schema.define(version: 2022_06_09_173032) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
-  end
-
-  create_table "collaborations", force: :cascade do |t|
-    t.string "name"
-    t.integer "status", default: 0
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.integer "artist1_id"
-    t.integer "artist2_id"
   end
 
   create_table "photo_categories", force: :cascade do |t|
