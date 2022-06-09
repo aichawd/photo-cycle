@@ -65,3 +65,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Adding Cloudinary for image hosting
 gem 'cloudinary', '~> 1.16.0'
+
+gem "sidekiq", "~> 6.5"
