@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_09_141040) do
+
+ActiveRecord::Schema.define(version: 2022_06_09_173032) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +50,7 @@ ActiveRecord::Schema.define(version: 2022_06_09_141040) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+
   create_table "chatrooms", force: :cascade do |t|
     t.string "name"
     t.bigint "user_id", null: false
@@ -67,6 +69,15 @@ ActiveRecord::Schema.define(version: 2022_06_09_141040) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
+  create_table "collaborations", force: :cascade do |t|
+    t.string "name"
+    t.integer "status", default: 0
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "artist1_id"
+    t.integer "artist2_id"
+  end
+
   create_table "photo_categories", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -80,6 +91,8 @@ ActiveRecord::Schema.define(version: 2022_06_09_141040) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"
+    t.bigint "collaboration_id"
+    t.index ["collaboration_id"], name: "index_pictures_on_collaboration_id"
     t.index ["user_id"], name: "index_pictures_on_user_id"
   end
 
@@ -105,5 +118,6 @@ ActiveRecord::Schema.define(version: 2022_06_09_141040) do
   add_foreign_key "messages", "users"
   add_foreign_key "photo_categories", "categories"
   add_foreign_key "photo_categories", "pictures"
+  add_foreign_key "pictures", "collaborations"
   add_foreign_key "pictures", "users"
 end
