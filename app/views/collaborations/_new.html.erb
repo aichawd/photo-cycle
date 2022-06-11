@@ -1,0 +1,11 @@
+<% photographer = params[:username] %>
+
+<div class="container">
+  <h3>Suggest a collab' to <%= photographer %></h3>
+
+  <%= simple_form_for(@collab) do |f| %>
+    <%= hidden_field_tag 'artist2', "#{photographer}" %>
+    <%= f.input :name, label: 'Name of the collaboration' %>
+    <%= f.submit "Suggest collab", class: "btn btn-secondary" %>
+  <% end %>
+</div>
