@@ -72,7 +72,7 @@ img_url = 'https://images.unsplash.com/photo-1560787313-5dff3307e257?ixlib=rb-1.
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = paul
-photo_unsplash.save!
+photo_unsplash.save! 
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = portrait
