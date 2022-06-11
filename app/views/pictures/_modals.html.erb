@@ -1,0 +1,29 @@
+<!-- New Photo Modal-->
+<div class="modal fade" id="newPhotoModal" tabindex="-1" aria-labelledby="newPhotoModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="newPhotoModalLabel">Add a photo</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <%= render 'new' %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Suggest Collab  Modal-->
+<div class="modal fade" id="collabModal" tabindex="-1" aria-labelledby="collabModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="collabModalLabel">Collaborate</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <%= render 'collaborations/new' %>
+      </div>
+    </div>
+  </div>
+</div>

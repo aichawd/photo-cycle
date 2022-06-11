@@ -2,8 +2,10 @@ class PicturesController < ApplicationController
   def user_gallery
     @user = User.find_by(username: params[:username])
     @user_pictures = Picture.where(user: @user)
-    # defining a picture variable for the New modal
+    # defining a picture variable for the 'Add photo' modal
     @picture = Picture.new
+    # defining a collab variable for the 'Propose collab' modal
+    @collab = Collaboration.new
   end
 
   def new
