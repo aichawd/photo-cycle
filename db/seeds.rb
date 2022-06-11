@@ -18,10 +18,10 @@ img = URI.open('https://ca.slack-edge.com/T02NE0241-U010LE2G2MV-875acd0f9038-512
 jeremy.photo.attach(io: img, filename: "jeremy.jpg", content_type: 'image/jpg')
 jeremy.save!
 
-charlotte = User.new(first_name: 'Charlotte', last_name: 'Bory', username:'Charlotte', email: 'charlotte@photocycle.com', password: 'azerty')
-img = URI.open('https://ca.slack-edge.com/T02NE0241-U01HWUHQEMQ-c92da5718288-512')
-charlotte.photo.attach(io: img, filename: "charlotte.jpg", content_type: 'image/jpg')
-charlotte.save!
+nadia = User.new(first_name: 'nadia', last_name: 'Auger', username:'Nadia', email: 'nadia@photocycle.com', password: 'azerty')
+img = URI.open('https://ca.slack-edge.com/T02NE0241-UP65W8HLN-3e225350d956-192')
+nadia.photo.attach(io: img, filename: "nadia.jpg", content_type: 'image/jpg')
+nadia.save!
 
 claire = User.new(first_name: 'Claire', last_name: 'Ziemendorf', username:'Claire', email: 'claire@photocycle.com', password: 'azerty')
 img = URI.open('https://ca.slack-edge.com/T02NE0241-UBNBUGXV4-1097582501e0-512')
@@ -49,17 +49,19 @@ aicha.photo.attach(io: img, filename: "aicha.jpg", content_type: 'image/jpg')
 aicha.save!
 
 # create categories
-portrait = Category.create(name: "Portrait")
+portrait = Category.create(name: "Portrait") #Paul #nadia
 
-landscape = Category.create(name: "Landscape")
+landscape = Category.create(name: "Landscape") # Alex - Aicha - Jeremy
 
 black_and_white = Category.create(name: "Black & White")
 
-desert = Category.create(name: "Desert")
+desert = Category.create(name: "Desert") #Alex
 
-forest = Category.create(name: "Forest")
+forest = Category.create(name: "Forest") #Aicha
 
-beach = Category.create(name: "Beach")
+polar = Category.create(name: "Polar") #Bruno
+
+urban = Category.create(name: "Urban") #Jeremy
 
 
 # ************************** TOUTES LES PHOTOS SONT AU FORMAT 387 - 460 - 520 + 2photos à 800 *********************************
@@ -68,7 +70,7 @@ beach = Category.create(name: "Beach")
 
 # PORTRAIT PAUL X BRUNO
 photo_unsplash = Picture.new
-img_url = 'https://images.unsplash.com/photo-1560787313-5dff3307e257?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
+img_url = 'https://images.unsplash.com/photo-1560787313-5dff3307e257?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=520&q=80'
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = paul
@@ -80,7 +82,7 @@ photo_unsplash_category.save!
 
 
 photo_unsplash = Picture.new
-img_url = 'https://images.unsplash.com/photo-1444069069008-83a57aac43ac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=460&q=80'
+img_url = 'https://images.unsplash.com/photo-1444069069008-83a57aac43ac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=520&q=80'
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = paul
@@ -92,7 +94,7 @@ photo_unsplash_category.save!
 
 #3SQUARE
 photo_unsplash = Picture.new
-img_url = 'https://images.unsplash.com/photo-1549150712-1d243024db80?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
+img_url = 'https://images.unsplash.com/photo-1549150712-1d243024db80?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=520&q=80'
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = paul
@@ -102,7 +104,7 @@ photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = portrait
 photo_unsplash_category.save!
 
-
+#4
 photo_unsplash = Picture.new
 img_url = 'https://images.unsplash.com/photo-1488820098099-8d4a4723a490?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=520&q=80'
 file = URI.open(img_url)
@@ -116,7 +118,7 @@ photo_unsplash_category.save!
 
 #5
 photo_unsplash = Picture.new
-img_url = 'https://images.unsplash.com/photo-1599925002316-82ab470937ce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=460&q=80'
+img_url = 'https://images.unsplash.com/photo-1599925002316-82ab470937ce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=520&q=80'
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = paul
@@ -126,9 +128,9 @@ photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = portrait
 photo_unsplash_category.save!
 
-
+#6
 photo_unsplash = Picture.new
-img_url = 'https://images.unsplash.com/photo-1544124094-8aea0374da93?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
+img_url = 'https://images.unsplash.com/photo-1544124094-8aea0374da93?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=520&q=80'
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = paul
@@ -139,7 +141,7 @@ photo_unsplash_category.category = portrait
 photo_unsplash_category.save!
 
 
-
+#7
 photo_unsplash = Picture.new
 img_url = 'https://images.unsplash.com/photo-1562457753-6867bda028cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=520&q=80'
 file = URI.open(img_url)
@@ -153,7 +155,7 @@ photo_unsplash_category.save!
 
 #SQUARE
 photo_unsplash = Picture.new
-img_url = 'https://images.unsplash.com/photo-1578176603894-57973e38890f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=460&q=80'
+img_url = 'https://images.unsplash.com/photo-1578176603894-57973e38890f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=520&q=80'
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = paul
@@ -179,20 +181,7 @@ photo_unsplash_category.save!
 
 #10
 photo_unsplash = Picture.new
-img_url = 'https://images.unsplash.com/photo-1441886367417-1c946b32a980?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=460&q=80'
-file = URI.open(img_url)
-photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
-photo_unsplash.user = paul
-photo_unsplash.save!
-photo_unsplash_category = PhotoCategory.new
-photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = portrait
-photo_unsplash_category.save!
-
-
-
-photo_unsplash = Picture.new
-img_url = 'https://images.unsplash.com/photo-1651097681179-c64917595ff2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
+img_url = 'https://images.unsplash.com/photo-1441886367417-1c946b32a980?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=520&q=80'
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = paul
@@ -204,7 +193,19 @@ photo_unsplash_category.save!
 
 
 photo_unsplash = Picture.new
-img_url = 'https://images.unsplash.com/photo-1525599428495-0441bd5c67de?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=460&q=80'
+img_url = 'https://images.unsplash.com/photo-1651097681179-c64917595ff2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=520&q=80'
+file = URI.open(img_url)
+photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
+photo_unsplash.user = paul
+photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = portrait
+photo_unsplash_category.save!
+
+
+photo_unsplash = Picture.new
+img_url = 'https://images.unsplash.com/photo-1525599428495-0441bd5c67de?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=520&q=80'
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = paul
@@ -241,7 +242,7 @@ photo_unsplash_category.save!
 
 #15
 photo_unsplash = Picture.new
-img_url = 'https://images.unsplash.com/photo-1493106819501-66d381c466f1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=460&q=80'
+img_url = 'https://images.unsplash.com/photo-1493106819501-66d381c466f1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=520&q=80'
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = paul
@@ -253,7 +254,7 @@ photo_unsplash_category.save!
 
 
 photo_unsplash = Picture.new
-img_url = 'https://images.unsplash.com/photo-1578069187179-16318dcdd0ed?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
+img_url = 'https://images.unsplash.com/photo-1578069187179-16318dcdd0ed?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=520&q=80'
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = paul
@@ -265,7 +266,7 @@ photo_unsplash_category.save!
 
 
 photo_unsplash = Picture.new
-img_url = 'https://images.unsplash.com/photo-1504904488824-dbeda3cb530b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=460&q=80'
+img_url = 'https://images.unsplash.com/photo-1504904488824-dbeda3cb530b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=520&q=80'
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = paul
@@ -274,7 +275,6 @@ photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = portrait
 photo_unsplash_category.save!
-
 
 
 photo_unsplash = Picture.new
@@ -289,8 +289,9 @@ photo_unsplash_category.category = portrait
 photo_unsplash_category.save!
 
 
+
 photo_unsplash = Picture.new
-img_url = 'https://images.unsplash.com/photo-1578307362674-b209690512c0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
+img_url = 'https://images.unsplash.com/photo-1592576543332-120a87723830?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=520&q=80'
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = paul
@@ -300,9 +301,10 @@ photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = portrait
 photo_unsplash_category.save!
 
-#20
+
+
 photo_unsplash = Picture.new
-img_url = 'https://images.unsplash.com/photo-1524037788347-61fffad67935?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=460&q=80'
+img_url = 'https://images.unsplash.com/photo-1589837396034-518c01de601a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=520&q=80'
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = paul
@@ -310,52 +312,356 @@ photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = portrait
+photo_unsplash_category.save!
+
+
+photo_unsplash = Picture.new
+img_url = 'https://images.unsplash.com/photo-1517202383675-eb0a6e27775f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=520&q=80'
+file = URI.open(img_url)
+photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
+photo_unsplash.user = paul
+photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = portrait
+photo_unsplash_category.save
+
+
+
+
+
+# Aicha FOREST
+photo_unsplash = Picture.new
+img_url = 'https://images.unsplash.com/photo-1515718533743-254052bbf4bb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=520&q=80'
+file = URI.open(img_url)
+photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
+photo_unsplash.user = aicha
+photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
+
+
+
+photo_unsplash = Picture.new
+img_url = 'https://images.unsplash.com/photo-1515718486653-d63accc9cb3f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'
+file = URI.open(img_url)
+photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
+photo_unsplash.user = aicha
+photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
+
+
+
+photo_unsplash = Picture.new
+img_url = 'https://images.unsplash.com/photo-1515718581503-6a846ee00040?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=520&q=80'
+file = URI.open(img_url)
+photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
+photo_unsplash.user = aicha
+photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
+
+
+photo_unsplash = Picture.new
+img_url = 'https://images.unsplash.com/photo-1441990912087-4acb4d2d1d3a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'
+file = URI.open(img_url)
+photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
+photo_unsplash.user = aicha
+photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
+
+
+
+photo_unsplash = Picture.new
+img_url = 'https://images.unsplash.com/photo-1599996327336-55521b30482e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
+file = URI.open(img_url)
+photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
+photo_unsplash.user = aicha
+photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
+
+
+photo_unsplash = Picture.new
+img_url = 'https://images.unsplash.com/photo-1545510367-c9d9f830c3e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'
+file = URI.open(img_url)
+photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
+photo_unsplash.user = aicha
+photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
+
+
+photo_unsplash = Picture.new
+img_url = 'https://images.unsplash.com/photo-1496060169243-453fde45943b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=431&q=80'
+file = URI.open(img_url)
+photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
+photo_unsplash.user = aicha
+photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
+
+photo_unsplash = Picture.new
+img_url = 'https://images.unsplash.com/photo-1485067801970-70573e3f77d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80'
+file = URI.open(img_url)
+photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
+photo_unsplash.user = aicha
+photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
+
+
+photo_unsplash = Picture.new
+img_url = 'https://images.unsplash.com/photo-1535451180130-91275dae7d6f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80'
+file = URI.open(img_url)
+photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
+photo_unsplash.user = aicha
+photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
+
+
+photo_unsplash = Picture.new
+img_url = 'https://images.unsplash.com/photo-1531951665218-b8b598959072?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
+file = URI.open(img_url)
+photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
+photo_unsplash.user = aicha
+photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
+
+
+photo_unsplash = Picture.new
+img_url = 'https://images.unsplash.com/photo-1510797215324-95aa89f43c33?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80'
+file = URI.open(img_url)
+photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
+photo_unsplash.user = aicha
+photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
+
+photo_unsplash = Picture.new
+img_url = 'https://images.unsplash.com/photo-1599940824399-b87987ceb72a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=327&q=80'
+file = URI.open(img_url)
+photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
+photo_unsplash.user = aicha
+photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
+
+photo_unsplash = Picture.new
+img_url = 'https://images.unsplash.com/photo-1543964256-d1194f65dc23?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
+file = URI.open(img_url)
+photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
+photo_unsplash.user = aicha
+photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
+
+
+photo_unsplash = Picture.new
+img_url = 'https://images.unsplash.com/photo-1599940824219-e6aa9be5fba2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=327&q=80'
+file = URI.open(img_url)
+photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
+photo_unsplash.user = aicha
+photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
+
+
+photo_unsplash = Picture.new
+img_url = 'https://images.unsplash.com/photo-1503903587778-5124b6d043b8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
+file = URI.open(img_url)
+photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
+photo_unsplash.user = aicha
+photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
+
+
+photo_unsplash = Picture.new
+img_url = 'https://images.unsplash.com/photo-1508193638397-1c4234db14d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
+file = URI.open(img_url)
+photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
+photo_unsplash.user = aicha
+photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
+
+
+photo_unsplash = Picture.new
+img_url = 'https://images.unsplash.com/photo-1559770968-53924e9b32de?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=327&q=80'
+file = URI.open(img_url)
+photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
+photo_unsplash.user = aicha
+photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
+
+#suspicion doublon
+photo_unsplash = Picture.new
+img_url = 'https://images.unsplash.com/photo-1503435980610-a51f3ddfee50?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
+file = URI.open(img_url)
+photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
+photo_unsplash.user = aicha
+photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
+
+
+photo_unsplash = Picture.new
+img_url = 'https://images.unsplash.com/photo-1504560316116-f7815ebb9c5d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
+file = URI.open(img_url)
+photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
+photo_unsplash.user = aicha
+photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
+
+
+photo_unsplash = Picture.new
+img_url = 'https://images.unsplash.com/photo-1504916832191-3f725514ccdb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
+file = URI.open(img_url)
+photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
+photo_unsplash.user = aicha
+photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
+
+
+photo_unsplash = Picture.new
+img_url = 'https://images.unsplash.com/photo-1596523521208-146d9ccc505f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=370&q=80'
+file = URI.open(img_url)
+photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
+photo_unsplash.user = aicha
+photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
+
+photo_unsplash = Picture.new
+img_url = 'https://images.unsplash.com/photo-1553755322-56baa43a31d7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80'
+file = URI.open(img_url)
+photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
+photo_unsplash.user = aicha
+photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
+
+photo_unsplash = Picture.new
+img_url = 'https://images.unsplash.com/photo-1575489272413-cb506258027e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
+file = URI.open(img_url)
+photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
+photo_unsplash.user = aicha
+photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
+
+photo_unsplash = Picture.new
+img_url = 'https://images.unsplash.com/photo-1520052600632-67420194a58f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80'
+file = URI.open(img_url)
+photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
+photo_unsplash.user = aicha
+photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
+
+photo_unsplash = Picture.new
+img_url = 'https://images.unsplash.com/photo-1631817658262-ec3c440ef159?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
+file = URI.open(img_url)
+photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
+photo_unsplash.user = aicha
+photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
 photo_unsplash_category.save!
 
 =begin
 photo_unsplash = Picture.new
-img_url = 'https://images.unsplash.com/photo-1592576543332-120a87723830?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
+img_url = ''
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
-photo_unsplash.user = paul
+photo_unsplash.user = aicha
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = portrait
+photo_unsplash_category.category = landscape
 photo_unsplash_category.save!
-=end
 
-
-
-#photo_unsplash = Picture.new
-#img_url = 'https://images.unsplash.com/photo-1589837396034-518c01de601a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80'
-#file = URI.open(img_url)
-#photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
-#photo_unsplash.user = paul
-#photo_unsplash.save!
-#photo_unsplash_category = PhotoCategory.new
-#photo_unsplash_category.picture = photo_unsplash
-#photo_unsplash_category.category = portrait
-#photo_unsplash_category.save!
-
-
-#23
-=begin
 photo_unsplash = Picture.new
-img_url = 'https://images.unsplash.com/photo-1517202383675-eb0a6e27775f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=460&q=80'
+img_url = ''
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
-photo_unsplash.user = paul
+photo_unsplash.user = aicha
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = portrait
+photo_unsplash_category.category = landscape
 photo_unsplash_category.save!
-=end
 
-=begin
 photo_unsplash = Picture.new
-img_url = 'https://images.unsplash.com/photo-1515718533743-254052bbf4bb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
+img_url = ''
+file = URI.open(img_url)
+photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
+photo_unsplash.user = aicha
+photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
+
+photo_unsplash = Picture.new
+img_url = ''
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = aicha
@@ -365,78 +671,3 @@ photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = landscape
 photo_unsplash_category.save!
 =end
-
-
-
-# Landscape aicha
-photo_unsplash = Picture.new
-img_url = 'https://images.unsplash.com/photo-1515718486653-d63accc9cb3f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
-file = URI.open(img_url)
-photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
-photo_unsplash.user = aicha
-photo_unsplash.save!
-photo_unsplash_category = PhotoCategory.new
-photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = landscape
-photo_unsplash_category.save!
-
-
-
-photo_unsplash = Picture.new
-img_url = 'https://images.unsplash.com/photo-1515718581503-6a846ee00040?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=327&q=80'
-file = URI.open(img_url)
-photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
-photo_unsplash.user = aicha
-photo_unsplash.save!
-photo_unsplash_category = PhotoCategory.new
-photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = landscape
-photo_unsplash_category.save!
-
-
-photo_unsplash = Picture.new
-img_url = 'https://images.unsplash.com/photo-1441990912087-4acb4d2d1d3a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'
-file = URI.open(img_url)
-photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
-photo_unsplash.user = aicha
-photo_unsplash.save!
-photo_unsplash_category = PhotoCategory.new
-photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = landscape
-photo_unsplash_category.save!
-
-
-photo_unsplash = Picture.new
-img_url = 'https://images.unsplash.com/photo-1562095241-8c6714fd4178?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80'
-file = URI.open(img_url)
-photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
-photo_unsplash.user = aicha
-photo_unsplash.save!
-photo_unsplash_category = PhotoCategory.new
-photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = landscape
-photo_unsplash_category.save!
-
-
-photo_unsplash = Picture.new
-img_url = 'https://images.unsplash.com/photo-1500375592092-40eb2168fd21?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80'
-file = URI.open(img_url)
-photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
-photo_unsplash.user = aicha
-photo_unsplash.save!
-photo_unsplash_category = PhotoCategory.new
-photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = landscape
-photo_unsplash_category.save!
-
-
-photo_unsplash = Picture.new
-img_url = 'https://images.unsplash.com/photo-1500375592092-40eb2168fd21?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80'
-file = URI.open(img_url)
-photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
-photo_unsplash.user = aicha
-photo_unsplash.save!
-photo_unsplash_category = PhotoCategory.new
-photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = landscape
-photo_unsplash_category.save!
