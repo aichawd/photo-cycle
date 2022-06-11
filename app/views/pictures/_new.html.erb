@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>New photo</h1>
+  <%= simple_form_for(@picture) do |f| %>
+    <%= f.input :photo, as: :file %>
+    <%= f.input :caption %>
+    <%= f.submit "Add to my gallery", class: "btn btn-secondary" %>
+  <% end %>
+</div>

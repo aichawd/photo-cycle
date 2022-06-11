@@ -1,0 +1,10 @@
+<% photographer = params[:username] %>
+
+<div class="container">
+  <h3>Suggest a collab' to <%= photographer %></h3>
+  
+  <%= simple_form_for(@collab) do |f| %>
+    <%= f.input :name, label: 'Name of the collaboration' %>
+    <%= f.submit "Suggest collab", class: "btn btn-secondary" %>
+  <% end %>
+</div>

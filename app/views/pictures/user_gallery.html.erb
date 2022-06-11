@@ -8,11 +8,26 @@
     <%# <p><%= @user.username %>
     <ol>
       <li><%= @user_pictures.count %> masterpieces</li>
+      <% if @user == current_user %>
+        <li>
+          <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#newPhotoModal">
+            Add photo
+          </button>
+        </li>
+      <% else %>
+        <li>
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#collabModal">
+            Collaborate
+          </button>
+        </li>
+      <% end %>
 
       <li>Matériel: Kidizoom 🥲</li>
     </ol>
     <p class="tags">My Tags: </p>
 </div>
+
+<%= render 'modals' %>
 
 <hr>
 
