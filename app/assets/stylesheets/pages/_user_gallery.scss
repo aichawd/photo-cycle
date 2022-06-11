@@ -18,39 +18,33 @@
     justify-content: space-evenly;
     list-style-type: none;
     display: flex;
-    padding: 7px;
+    padding: 10px;
     flex-direction: row;
     align-items: center;
     letter-spacing: 1px;
   }
 }
 
-
-
 //SEPARATOR
 
 
-
-
 .photo-behavior {
-
   ul {
 
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
-    padding: 7px 100px 7px 100px;
-    margin-right: 100px;
-    margin-left: 100px;
+    padding: 8px 300px 8px 300px;
+    justify-content: space-around;
     justify-items: stretch;
     align-items: stretch;
     grid-template-columns: 200px 200px 200px 200px;
-    //grid-template-rows: 200px 200px 200px;
+    grid-template-rows: 200px 200px 200px 200px;
 
   }
 
   li {
-    height: 55vh;
+    height: 60vh; //permet de zoom sur les photos -- 45vh par default
     flex-grow: 1;
   }
 
@@ -63,8 +57,8 @@
     max-height: 100%;
     min-width: 100%;
     object-fit: cover;
-    vertical-align: bottom;
-    padding: 7px;
+    vertical-align: none;
+    padding: 8px;
     margin: 0px 0px 0px 0px;
   }
 
