@@ -7,6 +7,9 @@
     <%# <p><%= @user.username %>
     <ol>
       <li><%= @user_pictures.count %> masterpieces</li>
+      <% if @user == current_user %>
+        <li><%= link_to 'Add photo', new_picture_path, class: 'btn btn-light' %></li>
+      <% end %>
 
       <li>Matériel: Kidizoom 🥲</li>
     </ol>
