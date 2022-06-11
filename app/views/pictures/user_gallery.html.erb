@@ -1,8 +1,24 @@
-<%= @user.first_name %>
-<%= @user.last_name %>
-<%= @user.username %>
-<%= @user_pictures.count %>
+<head>
+  <link rel="stylesheet" href="user_gallery.scss">
+</head>
 
-<% @user_pictures.each do |pic| %>
-  <%= cl_image_tag pic.photo.key %>
-<% end %>
+<div class='user-banner'>
+    <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+    <%# <p><%= @user.username %>
+    <ol>
+      <li><%= @user_pictures.count %> masterpieces</li>
+
+      <li>Matériel: Kidizoom 🥲</li>
+    </ol>
+    <p>Bio: artichette, tichette de 2, tichette de 3, tichette de 21, michette, tchiledeque, mique,sganabadarlane, résiné et raitournelle..</p>
+</div>
+
+<hr>
+
+<div class="photo-behavior">
+  <ul>
+    <% @user_pictures.each do |pic| %>
+      <li><%= cl_image_tag pic.photo.key %></li>
+    <% end %>
+  </ul>
+</div>
