@@ -3,11 +3,11 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
   resources :users, only: [:index]
-  resources :chatrooms, only: [:create, :show] do
+
+  resources :chatrooms, only: [:create, :show, :index] do
     resources :messages, only: :create
   end
 
-  resources :messages, only: :create
   resources :pictures, only: [:new, :create, :destroy]
   resources :collaborations
   get '/:username', to: 'pictures#user_gallery', as: "gallery"
