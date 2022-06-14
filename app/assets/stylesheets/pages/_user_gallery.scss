@@ -27,10 +27,9 @@
 
 //SEPARATOR
 
-
 .photo-behavior {
   ul {
-
+    max-height: 45vh;
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
@@ -40,12 +39,12 @@
     align-items: stretch;
     grid-template-columns: 200px 200px 200px 200px;
     grid-template-rows: 200px 200px 200px 200px;
-
   }
 
   li {
-    height: 60vh; //permet de zoom sur les photos -- 45vh par default
-    flex-grow: 1;
+   //permet de zoom sur les photos -- 45vh par default
+   height: 40vh;
+   flex-grow: 3;
   }
 
   li:last-child {
@@ -69,7 +68,9 @@
 @media (max-aspect-ratio: 1/1) {
   .photo-behavior {
     li {
-      height: 30vh;
+     height: 30vh;
+
+
     }
   }
 }
