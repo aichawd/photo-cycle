@@ -1,6 +1,15 @@
 class CollaborationsController < ApplicationController
   before_action :set_collab, only: [:show]
 
+  def index
+    my_id = current_user.id
+    @validated_collabs = Collaboration.where(["artist1_id = ? or artist2_id = ?", my_id, my_id]).where(status: 1)
+    @sent_pending = Collaboration.where(artist1: current_user).where(status: 0)
+    @sent_refused = Collaboration.where(artist1: current_user).where(status: 2)
+    @received_pending = Collaboration.where(artist2: current_user).where(status: 0)
+    @received_refused = Collaboration.where(artist2: current_user).where(status: 2)
+  end
+
   def new
     @collab = Collaboration.new
   end
