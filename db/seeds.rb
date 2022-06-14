@@ -58,7 +58,7 @@ landscape = Category.create(name: "Landscape") # Alex - Aicha - Jeremy
 
 desert = Category.create(name: "Desert") #Alex
 
-#forest = Category.create(name: "Forest") #Aicha
+forest = Category.create(name: "Forest") #Aicha
 
 polar = Category.create(name: "Polar") #Bruno
 
@@ -464,6 +464,10 @@ photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = forest
 photo_unsplash_category.save!
 
 
