@@ -375,7 +375,6 @@ photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = portrait
 photo_unsplash_category.save!
 
-#
 photo_unsplash = Picture.new
 img_url = 'https://images.unsplash.com/photo-1592576543332-120a87723830?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'
 file = URI.open(img_url)
@@ -400,8 +399,6 @@ photo_unsplash_category.category = portrait
 photo_unsplash_category.save!
 
 
-
-#ok
 photo_unsplash = Picture.new
 img_url = 'https://images.unsplash.com/photo-1511933617088-859b414f00ae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=389&q=80'
 file = URI.open(img_url)
@@ -454,7 +451,6 @@ photo_unsplash_category.save!
 
 
 # Aicha FOREST
-
 photo_unsplash = Picture.new
 img_url = 'https://images.unsplash.com/photo-1508788397430-55907b348ba8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
 file = URI.open(img_url)
@@ -477,8 +473,6 @@ photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = landscape
 photo_unsplash_category.save!
-
-
 
 
 photo_unsplash = Picture.new
@@ -512,8 +506,6 @@ photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = landscape
 photo_unsplash_category.save!
-
-
 
 
 photo_unsplash = Picture.new
@@ -675,7 +667,7 @@ photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = landscape
 photo_unsplash_category.save!
 
-#suspicion doublon
+
 photo_unsplash = Picture.new
 img_url = 'https://images.unsplash.com/photo-1454425064867-5ba516caf601?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
 file = URI.open(img_url)
