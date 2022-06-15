@@ -1,5 +1,5 @@
 class CollaborationsController < ApplicationController
-  before_action :set_collab, only: [:show]
+  before_action :set_collab, only: [:show, :update]
 
   def index
     my_id = current_user.id
@@ -32,6 +32,14 @@ class CollaborationsController < ApplicationController
     @artist2 = User.find(@collab.artist2_id)
   end
 
+  def update
+    @collab.update(status: params["status"])
+    respond_to do |format|
+      format.html { redirect_to collaborations_path }
+      format.text { redirect_to collaborations_path }
+    end
+  end
+
   private
 
   def set_collab
@@ -39,6 +47,6 @@ class CollaborationsController < ApplicationController
   end
 
   def collab_params
-    params.require(:collaboration).permit(:name, :status, :artist1_id, :artist2_id)
+    params.require(:collaboration).permit(:name, :status, :artist1_id, :artist2_id, :description)
   end
 end

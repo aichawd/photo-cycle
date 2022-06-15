@@ -1,11 +1,23 @@
 <div class="container">
   <h1>Collaborations</h1>
-  
+
   <div class="row">
     <div class="col-6">
       <h2>Galleries</h2>
       <% @validated_collabs.each do |collab| %>
-        <%= collab.name %>
+        <div class="card-collab">
+          <div class="av1">
+            <% if collab.artist1.photo.attached? %>
+              <%= cl_image_tag collab.artist1.photo.key, class: "avatar"%>
+            <% end %>
+            <div class="av2">
+              <% if collab.artist2.photo.attached? %>
+              <%= cl_image_tag collab.artist2.photo.key, class: "avatar"%>
+            <% end %>
+            </div>
+          </div>
+          <h5 class="mx-2 my-1"><%= collab.name %></h5>
+        </div>
       <% end %>
     </div>
 
@@ -14,26 +26,47 @@
 
         <h3>Received</h3>
           <h4>Pending</h4>
-            <% @received_pending.each do |collab| %>
-              <p><%= collab.artist1.username %> is suggesting a collab</p>
-              <%= collab.name %>
-            <% end %>
-          <h4>Refused</h4>
-            <% @received_refused.each do |collab| %>
-              <%= collab.name %>
-            <% end %>
+
+              <% @received_pending.each do |collab| %>
+                <div class="card-collab-pending" data-controller="answer-collab">
+                  <div class="d-flex collab-intro">
+                    <% if collab.artist1.photo.attached? %>
+                    <%= cl_image_tag collab.artist1.photo.key, class: "avatar mx-2"%>
+                    <% end %>
+                    <%= collab.artist1.username %> is suggesting a collab
+                  </div>
+                  <div class="collab-infos">
+                    <h5 class="mx-2 my-1"><%= collab.name %></h5>
+                  </div>
+                  <div class="collab-answer d-flex justify-content-end my-1">
+                    <%= simple_form_for collab, html: {data: { answer_collab_target: "form", action: "submit->answer-collab#updatestatus"} } do |f| %>
+                      <%= hidden_field_tag 'status', 1 %>
+                      <%= f.submit "Accept", class: "btn btn-primary mx-1" %>
+                    <% end %>
+                    <%= simple_form_for collab, html: {data: { answer_collab_target: "form", action: "submit->answer-collab#updatestatus"} } do |f| %>
+                      <%= hidden_field_tag 'status', 2 %>
+                      <%= f.submit "Refuse", class: "btn btn-secondary mx-1" %>
+                    <% end %>
+                  </div>
+                </div>
+              <% end %>
       <br>
 
       <h3>Sent</h3>
         <h4>Pending</h4>
           <% @sent_pending.each do |collab| %>
-              <p>Collab request sent to <%= collab.artist2.username %></p>
-              <%= collab.name %>
-            <% end %>
-          <h4>Refused</h4>
-            <% @sent_refused.each do |collab| %>
-              <%= collab.name %>
-            <% end %>
+            <div class="card-collab-pending">
+              <div class="d-flex collab-intro mx-2">
+                Collab request sent to <%= collab.artist2.username %>
+                <% if collab.artist2.photo.attached? %>
+                <%= cl_image_tag collab.artist2.photo.key, class: "avatar mx-2"%>
+                <% end %>
+              </div>
+              <div class="collab-infos">
+                <h5 class="mx-2 my-1"><%= collab.name %></h5>
+              </div>
+            </div>
+        <% end %>
     </div>
   </div>
 </div>
