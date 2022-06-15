@@ -2,6 +2,9 @@
   <h1>New photo</h1>
   <%= simple_form_for(@picture) do |f| %>
     <%= f.input :photo, as: :file %>
+    <% my_id = current_user.id %>
+    <%= f.input :collaboration_id, label: 'Part of a collab?',
+        collection: Collaboration.where(["artist1_id = ? or artist2_id = ?", my_id, my_id]).where(status: 1) %>
     <%= f.input :caption %>
     <%= f.submit "Add to my gallery", class: "btn btn-secondary" %>
   <% end %>
