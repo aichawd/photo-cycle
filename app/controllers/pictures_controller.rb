@@ -8,7 +8,7 @@ class PicturesController < ApplicationController
     @single_chatroom = Chatroom.find_by(first_user: current_user, second_user: @user) || Chatroom.find_by(first_user: @user, second_user: current_user) || Chatroom.create_private_chatroom(@user, current_user)
     @message= Message.new
     @messages = @single_chatroom.messages.order(created_at: :asc)
-    @user_pictures = Picture.where(user: @user)
+    @user_pictures = Picture.where(user: @user).where(collaboration_id: nil)
     # defining a picture variable for the 'Add photo' modal
     @picture = Picture.new
     # defining a collab variable for the 'Propose collab' modal
@@ -37,6 +37,6 @@ class PicturesController < ApplicationController
   end
 
   def picture_params
-    params.require(:picture).permit(:user, :caption, :photo)
+    params.require(:picture).permit(:user, :caption, :photo, :collaboration_id)
   end
 end
