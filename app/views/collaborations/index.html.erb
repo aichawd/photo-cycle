@@ -16,7 +16,7 @@
             <% end %>
             </div>
           </div>
-          <h5 class="mx-2 my-1"><%= collab.name %></h5>
+          <%= link_to collab.name, collaboration_path(collab), class: "h5 mx-2 my-1"%>
         </div>
       <% end %>
     </div>
