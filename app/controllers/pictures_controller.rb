@@ -8,6 +8,10 @@ class PicturesController < ApplicationController
     @collab = Collaboration.new
   end
 
+  def user_feed
+    @pictures = Picture.all
+  end
+
   def new
     @picture = Picture.new
   end
