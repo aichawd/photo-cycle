@@ -3,7 +3,13 @@
 </head>
 
 <div class='user-banner'>
-    <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+    <h1>
+      <% if @user.photo.attached? %>
+                <%= cl_image_tag @user.photo.key, class: "avatar"%>
+      <% end %>
+      <%= @user.first_name %> <%= @user.last_name %>
+    </h1>
+
     <p>Bio: artichette, tichette de 2, tichette de 3, tichette de 21, michette, tchiledeque, mique,sganabadarlane, résiné et raitournelle..</p>
     <%# <p><%= @user.username %>
     <ol>
@@ -23,7 +29,7 @@
         <li>
 
           <%= link_to 'contact', chatroom_path(@single_chatroom) %>
-        
+
         </li>
       <% end %>
       <li>Matériel: Kidizoom 🥲</li>
