@@ -1,0 +1,29 @@
+
+<div class="feeds-banner">
+  <h1>Discover something new</h1>
+  <ol>
+    <li>
+      <div class="wrap-searchbar">
+        <div class="search">
+          <input type="text" class="searchTerm" placeholder="What are you looking for ?">
+          <button type="submit" class="searchButton">
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </li>
+  </ol>
+</div>
+
+
+<div class="photo-feed-behavior">
+  <ul>
+    <% @pictures.shuffle.each do |pic| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path pic.photo.key %>)">
+        <% pic.categories.each do |category| %>
+          #<%= category.name %>
+        <% end %>
+      </div>
+    <% end %>
+  </ul>
+</div>

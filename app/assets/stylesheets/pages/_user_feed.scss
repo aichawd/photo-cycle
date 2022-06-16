@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@100&display=swap');
+
+
+
+
+.feeds-banner {
+  h1{
+    font-size: 40px;
+    text-align: center;
+    padding: 10px;
+    letter-spacing: 1px;
+    font-family: 'Syne', sans-serif;
+  }
+
+  ol {
+    justify-content: space-evenly;
+    list-style-type: none;
+    display: flex;
+    padding: 10px;
+    flex-direction: row;
+    align-items: center;
+    letter-spacing: 1px;
+  }
+
+  .search {
+    width: 100%;
+    position: relative;
+    display: flex;
+  }
+
+  .searchTerm {
+    width: 100%;
+    border: none;
+    padding: 5px;
+    height: 40px;
+    outline: none;
+    color: #9DBFAF;
+    text-align: center;
+    font-size: 15px;
+  }
+
+  .searchTerm:focus{
+    color: #060606;
+  }
+
+  .searchButton {
+    width: 40px;
+    height: 40px; // resize the bar
+    border: none;
+    background: #fff;
+    color: #060606;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'Epilogue', sans-serif;
+  }
+
+  /*Resize the wrap to see the search bar change!*/
+  .wrap-searchbar {
+    width: 15%;
+    position: absolute;
+    top: 17%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+
+
+
+
+
+
+
+.photo-feed-behavior {
+  ul {
+    max-height: 45vh;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 8px 150px 8px 150px;
+    justify-content: space-around;
+    justify-items: stretch;
+    align-items: stretch;
+    grid-template-columns: 200px 200px 200px 200px;
+    grid-template-rows: 200px 200px 200px 200px;
+
+  }
+
+  li {
+   //permet de zoom sur les photos -- 45vh par default
+   height: 40vh;
+   flex-grow: 3;
+  }
+
+  li:last-child {
+    // There's no science in using "10" here. In all my testing, this delivered the best results.
+    flex-grow: 10;
+  }
+
+  img {
+    max-height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+    vertical-align: none;
+    padding: 8px;
+    margin: 0px 0px 0px 0px;
+  }
+
+
+  // ADVANCED
+}
+
+.card-category {
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  color: white;
+  font-size: 18px;
+  height: 40vh;
+  flex-grow: 3;
+  padding: 8px 150px 8px 150px;
+  margin: 8px 8px 8px 8px;
+  
+
+}
+// Portrait
+
+@media (max-aspect-ratio: 1/1) {
+  .photo-behavior {
+    li {
+     height: 30vh;
+
+
+    }
+  }
+}
+
+// Short screens
+
+@media (max-height: 480px) {
+  .photo-behavior {
+    li {
+      height: 80vh;
+    }
+  }
+}
+
+// Smaller screens in portrait
+
+@media (max-aspect-ratio: 1/1) and (max-width: 480px) {
+  .photo-behavior {
+
+    ul {
+      list-style-type: none;
+      flex-direction: row;
+    }
+
+    li {
+      height: auto;
+      width: 100%;
+    }
+    img {
+      width: 100%;
+      max-height: 75vh;
+      min-width: 0;
+    }
+  }
+}

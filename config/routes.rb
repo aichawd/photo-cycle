@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   resources :pictures, only: [:new, :create, :destroy]
   resources :collaborations
+  get '/feed', to: 'pictures#user_feed', as: "feed"
   get '/:username', to: 'pictures#user_gallery', as: "gallery"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
