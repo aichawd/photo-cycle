@@ -21,6 +21,9 @@
     <% @pictures.shuffle.each do |pic| %>
       <div class="card-category" url(<%= cl_image_path pic.photo.key %>)">
         <% pic.categories.each do |category| %>
+          <%= link_to gallery_path(pic.user.username) do %>
+            <%= cl_image_tag pic.user.photo.key, class: "avatar"%>
+          <% end %>
           #<%= category.name %>
         <% end %>
       </div>

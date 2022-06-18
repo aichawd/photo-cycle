@@ -6,7 +6,7 @@
   <%= simple_form_for(@collab) do |f| %>
     <%= hidden_field_tag 'artist2', "#{photographer}" %>
     <%= f.input :name, label: 'Name of the collaboration' %>
-    <%= f.input :description, label: "Tell #{photographer} why you cant to collaborate" %>
+    <%= f.input :description, label: "Tell #{photographer} why you want to collaborate" %>
     <%= f.submit "Suggest collab", class: "btn btn-secondary" %>
   <% end %>
 </div>
