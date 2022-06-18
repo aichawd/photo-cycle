@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-  has_many :pictures
+
+  has_many :pictures, dependent: :destroy
   has_many :messages, through: :chatrooms
   has_one_attached :photo
   has_many :chatrooms_as_first_user, :class_name => 'Chatroom', :foreign_key => 'first_user_id', dependent: :destroy
