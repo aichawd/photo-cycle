@@ -19,6 +19,15 @@ class ChatroomsController < ApplicationController
     @messages = @chatroom.messages.order(created_at: :asc)
 
     @users = User.where.not(id: current_user.id)
+    respond_to do |format|
+
+      format.json do
+        render json: {
+          html: render_to_string(partial: 'chatrooms/chatroom', locals: { chatroom: @chatroom, message: @message}, layout: false, formats: [:html])
+        }
+      end
+      format.html
+    end
   end
 
   def create
