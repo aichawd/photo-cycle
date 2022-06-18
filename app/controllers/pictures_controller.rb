@@ -5,9 +5,11 @@ class PicturesController < ApplicationController
     #(current_user)
     @chatroom = Chatroom.new
 
-    @single_chatroom = Chatroom.find_by(first_user: current_user, second_user: @user) || Chatroom.find_by(first_user: @user, second_user: current_user) || Chatroom.create_private_chatroom(@user, current_user)
+    @single_chatroom = Chatroom.find_by(first_user: current_user, second_user: @user) ||
+                       Chatroom.find_by(first_user: @user, second_user: current_user) ||
+                       Chatroom.create_private_chatroom(@user, current_user)
     @message= Message.new
-    @messages = @single_chatroom.messages.order(created_at: :asc)
+    @messages = @single_chatroom.messages.order(created_at: :asc) if @single_chatroom
     @user_pictures = Picture.where(user: @user).where(collaboration_id: nil)
     # defining a picture variable for the 'Add photo' modal
     @picture = Picture.new
