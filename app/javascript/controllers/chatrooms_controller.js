@@ -1,7 +1,7 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = [ "chatroomContainer" ]
+  static targets = [ "chatroomContainer", 'scrollableMessages' ]
 
   show(event) {
     const url = event.currentTarget.dataset.url
@@ -16,6 +16,10 @@ export default class extends Controller {
     .then(response => response.json())
     .then((data) => {
       this.chatroomContainerTarget.innerHTML = data.html
+      this.scrollToBottom()
     })
+  }
+  scrollToBottom() {
+    this.scrollableMessagesTarget.scrollTo(0, 9999999999)
   }
 }
