@@ -2,10 +2,7 @@
   <div class="container-fluid">
     <%= link_to feed_path, class: "navbar-brand" do %>
       <%= image_tag("Photography-Logo.jpg") %>
-    <% end %>
-    <% if user_signed_in? %>
-        <%= link_to "My gallery", gallery_path(current_user.username), class: "nav-link"%>
-    <% end %>
+    <% end %>  
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -14,6 +11,9 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
+          <li class="nav-item active">
+            <%= link_to "My gallery", gallery_path(current_user.username), class: "nav-link" %>
+          </li>
           <li class="nav-item active">
             <%= link_to "+Add photo", new_picture_path, class: "nav-link" %>
           </li>
