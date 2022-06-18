@@ -1,0 +1,25 @@
+<div data-controller="chatrooms">
+  <div class="d-flex">
+
+    <div id="user_list">
+      <ul>
+        <% @chatrooms.each do |chatroom| %>
+          <li class="chatroom_card" data-action="click->chatrooms#show" data-url="<%= chatroom_path(chatroom) %>">
+            <p class="interlocutor"><%= chatroom.interlocutor(current_user).username %></p>
+
+            <p class="chatroom_message">
+                <%= chatroom.messages.last.content.truncate(70) %>
+            </p>
+          </li>
+
+        <% end %>
+      </ul>
+
+    </div>
+
+
+    <div id="conversation" data-chatrooms-target="chatroomContainer"></div>
+  </div>
+
+  <div id="content"></div>
+</div>

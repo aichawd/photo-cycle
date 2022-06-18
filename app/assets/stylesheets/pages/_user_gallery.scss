@@ -107,3 +107,41 @@
 
 
 // test full screen mode onclick
+
+
+
+
+.photo-behavior {
+
+  li {
+    position: relative;
+
+    .dropdown {
+      visibility:hidden;
+      z-index: 10;
+    }
+  }
+
+  li:hover {
+    .dropdown {
+      visibility:visible;
+      z-index: 10;
+    }
+
+  .dropdown-item {
+    z-index: 10;
+    }
+  }
+
+  .dropdown {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    height: auto;
+  }
+
+  .fa-edit {
+    font-size: 20px;
+    color: white;
+  }
+}

@@ -1,6 +1,6 @@
-<div id="message-<%= message.sender.id %>">
+<div class="message" id="message-<%= message.sender.id %>">
   <small>
-    <strong><%= message.sender %></strong>
+    <strong><%= message.sender.username %></strong>
     <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
   </small>
   <p><%= message.content %></p>

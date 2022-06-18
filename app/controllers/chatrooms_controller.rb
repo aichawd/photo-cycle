@@ -2,10 +2,10 @@ class ChatroomsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @chatroom = Chatroom.new
-    @chatrooms = Chatroom.all
+    #@chatroom = Chatroom.new
+    @chatrooms = current_user.chatrooms
 
-    @users = User.where.not(id: current_user.id)
+    #@users = User.where.not(id: current_user.id)
     render 'index'
   end
 
@@ -19,9 +19,18 @@ class ChatroomsController < ApplicationController
     @messages = @chatroom.messages.order(created_at: :asc)
 
     @users = User.where.not(id: current_user.id)
+    respond_to do |format|
+
+      format.json do
+        render json: {
+          html: render_to_string(partial: 'chatrooms/chatroom', locals: { chatroom: @chatroom, message: @message}, layout: false, formats: [:html])
+        }
+      end
+      format.html
+    end
   end
 
   def create
-    @chatroom = Chatoom.create(name: params['chatroom']['name'])
+    @chatroom = Chatroom.create(name: params['chatroom']['name'])
   end
 end
