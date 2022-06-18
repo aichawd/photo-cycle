@@ -19,6 +19,7 @@
 <div class="photo-feed-behavior">
   <ul>
     <% @pictures.shuffle.each do |pic| %>
+
       <div class="card-category" style="background-image: url(<%= cl_image_path pic.photo.key %>)">
         <% pic.categories.each do |category| %>
           <%= link_to gallery_path(pic.user.username) do %>

@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
 
-
   root to: 'pictures#user_feed'
   #root to: 'pages#home'
 

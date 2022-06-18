@@ -35,6 +35,12 @@ class PicturesController < ApplicationController
     end
   end
 
+  def destroy
+    @picture = Picture.find(params[:id])
+    @picture.destroy
+    redirect_to gallery_path(current_user.username)
+  end
+
   private
 
   def get_name(user1, user2)
