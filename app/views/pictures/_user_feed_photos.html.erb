@@ -1,0 +1,13 @@
+<% pictures.shuffle.each do |pic| %>
+  <div class="card-category">
+    <%= cl_image_tag pic.photo.key, style: 'height: 100%;' %>
+    <div class="tags">
+      <% pic.categories.each do |category| %>
+        <span class="badge rounded-pill bg-light text-dark mx-1" data-tag-name="<%= category.name %>" data-action="click->search#searchByTag"><%= category.name %></span>
+      <% end %>
+    </div>
+    <%= link_to gallery_path(pic.user.username), class: 'tag-avatar' do %>
+      <%= cl_image_tag pic.user.photo.key %>
+    <% end %>
+  </div>
+<% end %>
