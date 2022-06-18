@@ -1,0 +1,21 @@
+import { Controller } from "stimulus"
+
+export default class extends Controller {
+  static targets = [ "chatroomContainer" ]
+
+  show(event) {
+    const url = event.currentTarget.dataset.url
+
+
+    fetch(url, {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+       }
+    })
+    .then(response => response.json())
+    .then((data) => {
+      this.chatroomContainerTarget.innerHTML = data.html
+    })
+  }
+}

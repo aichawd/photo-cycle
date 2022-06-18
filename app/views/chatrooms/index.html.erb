@@ -1,21 +1,24 @@
-<div>
+<div data-controller="chatrooms">
   <div class="d-flex">
 
     <div id="user_list">
       <ul>
-       <% @chatrooms.each do |chatroom| %>
-        <li>
-          <%= link_to chatroom.interlocutor(current_user).username, chatroom_path(chatroom) %>
-          <%=chatroom.messages.last.content  %>
-        </li>
+        <% @chatrooms.each do |chatroom| %>
+          <li class="chatroom_card" data-action="click->chatrooms#show" data-url="<%= chatroom_path(chatroom) %>">
+            <p class="interlocutor"><%= chatroom.interlocutor(current_user).username %></p>
 
-      <% end %>
+            <p class="chatroom_message">
+                <%=chatroom.messages.last.content %>
+            </p>
+          </li>
+
+        <% end %>
       </ul>
 
     </div>
 
 
-    <div id="conversation"></div>
+    <div id="conversation" data-chatrooms-target="chatroomContainer"></div>
   </div>
 
   <div id="content"></div>
