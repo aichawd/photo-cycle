@@ -31,7 +31,8 @@
                 <div class="card-collab-pending" data-controller="answer-collab">
                   <div class="d-flex collab-intro">
                     <% if collab.artist1.photo.attached? %>
-                    <%= cl_image_tag collab.artist1.photo.key, class: "avatar mx-2"%>
+                      
+                      <%= cl_image_tag collab.artist1.photo.key, class: "avatar mx-2"%>
                     <% end %>
                     <%= collab.artist1.username %> is suggesting a collab
                   </div>
