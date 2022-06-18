@@ -13,4 +13,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+         def chatrooms
+          chatrooms_as_first_user + chatrooms_as_second_user
+         end
 end

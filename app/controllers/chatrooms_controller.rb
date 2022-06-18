@@ -2,10 +2,10 @@ class ChatroomsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @chatroom = Chatroom.new
-    @chatrooms = Chatroom.all
+    #@chatroom = Chatroom.new
+    @chatrooms = current_user.chatrooms
 
-    @users = User.where.not(id: current_user.id)
+    #@users = User.where.not(id: current_user.id)
     render 'index'
   end
 
@@ -22,6 +22,6 @@ class ChatroomsController < ApplicationController
   end
 
   def create
-    @chatroom = Chatoom.create(name: params['chatroom']['name'])
+    @chatroom = Chatroom.create(name: params['chatroom']['name'])
   end
 end
