@@ -23,54 +23,39 @@
     letter-spacing: 1px;
   }
 
-  .search {
-    width: 100%;
+  .search-form-control {
     position: relative;
-    display: flex;
-  }
-
-  .searchTerm {
-    width: 100%;
-    border: none;
-    padding: 5px;
-    height: 40px;
-    outline: none;
-    color: #9DBFAF;
-    text-align: center;
-    font-size: 15px;
-  }
-
-  .searchTerm:focus{
-    color: #060606;
-  }
-
-  .searchButton {
-    width: 40px;
-    height: 40px; // resize the bar
-    border: none;
-    background: #fff;
-    color: #060606;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-    font-size: 16px;
-    font-family: 'Epilogue', sans-serif;
-  }
-
-  /*Resize the wrap to see the search bar change!*/
-  .wrap-searchbar {
     width: 15%;
-    position: absolute;
-    top: 25%;
-    left: 40%;
+    left: 50%;
     transform: translate(-50%, -50%);
+    margin-top: 25px;
+    margin-bottom: -17px;
+
   }
+
+  .search-form-control .btn {
+    position: absolute;
+    top: 10px;
+    bottom: 8px;
+    right: 8px;
+
+  }
+
+  .search-form-control .form-control {
+    height: 3rem;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 10px;
+
+  }
+
+  .search-form-control .form-control:focus {
+    border: 1px solid #000000;
+    outline: none !important;
+
+
+  }
+  /*Resize the wrap to see the search bar change!*/
 }
-
-
-
-
-
-
 
 
 .photo-feed-behavior {
@@ -99,32 +84,57 @@
     flex-grow: 10;
   }
 
-  img {
-    max-height: 100%;
-    min-width: 100%;
-    object-fit: cover;
-    vertical-align: none;
-    padding: 8px;
-    margin: 0px 0px 0px 0px;
-  }
-
-
+  // img {
+  //   max-height: 100%;
+  //   min-width: 100%;
+  //   object-fit: cover;
+  //   vertical-align: none;
+  //   // padding: 8px;
+  //   margin: 0px 0px 0px 0px;
+  // }
   // ADVANCED
 }
 
 .card-category {
-  background-size: cover;
-  background-position: center;
-  display: flex;
+  // background-size: cover;
+  // background-position: center;
+  display: inline-block;
   justify-content: center;
   align-items: flex-end;
   color: white;
   font-size: 18px;
   height: 40vh;
+  position: relative;
   flex-grow: 3;
-  padding: 8px 150px 8px 150px;
+  // padding: 8px 70px 8px 70px;
   margin: 8px 8px 8px 8px;
-
+  &> img {
+    max-height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+    vertical-align: none;
+    // padding: 8px;
+    margin: 0px 0px 0px 0px;
+  }
+  .tags {
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .tag-avatar {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    img {
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
 
 }
 // Portrait
