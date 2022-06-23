@@ -22,17 +22,16 @@
 
 .card-collab {
   overflow: hidden;
-  width: 80%;
+  width: 700px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   padding: 8px 8px;
   margin: 16px 0px;
   border-radius: 4px;
 
-  .collab-pictures {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    position: relative;
+  .collab-pictures img {
+    margin: 0 2px;
+    object-fit: cover;
   }
 
   .btn-add {
