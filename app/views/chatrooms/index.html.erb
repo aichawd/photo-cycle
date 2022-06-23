@@ -5,13 +5,17 @@
       <ul>
         <% @chatrooms.each do |chatroom| %>
           <li class="chatroom_card" data-action="click->chatrooms#show" data-url="<%= chatroom_path(chatroom) %>">
+            <div class="d-flex align-items-center">
+            <%= link_to gallery_path(chatroom.interlocutor(current_user).username) do %>
+              <%= cl_image_tag chatroom.interlocutor(current_user).photo.key, class: "avatar mx-2"%>
+              <% end %>
             <p class="interlocutor"><%= chatroom.interlocutor(current_user).username %></p>
-
+            </div>
             <p class="chatroom_message">
                 <%= chatroom.messages.last.content.truncate(70) %>
             </p>
           </li>
-
+        
         <% end %>
       </ul>
 
