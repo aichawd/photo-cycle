@@ -3,38 +3,31 @@
 </head>
 
 <div class='user-banner'>
+  <div class="banner-container">
     <h1>
       <% if @user.photo.attached? %>
-                <%= cl_image_tag @user.photo.key, class: "avatar"%>
+                <%= cl_image_tag @user.photo.key, class: "avatar-large"%>
       <% end %>
       <%= @user.first_name %> <%= @user.last_name %>
+          <button type="button" class="collab-button" data-bs-toggle="modal" data-bs-target="#collabModal">
+            Collaborate →
+          </button>
     </h1>
 
-    <p>Bio: artichette, tichette de 2, tichette de 3, tichette de 21, michette, tchiledeque, mique,sganabadarlane, résiné et raitournelle..</p>
-    <%# <p><%= @user.username %>
-    <ol>
-      <li><%= @user_pictures.count %> masterpieces</li>
-      <% if @user == current_user %>
-        <li>
+    <h3>Bio: artichette, tichette de 2, tichette de 3, tichette de 21, michette, <br> tchiledeque, mique,sganabadarlane, résiné et raitournelle..</h3>
+    <p>
+        <%= @user_pictures.count %> masterpieces
+        <% if @user == current_user %>
           <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#newPhotoModal">
             Add photo
           </button>
-        </li>
-      <% else %>
-        <li>
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#collabModal">
-            Collaborate
-          </button>
-        </li>
-        <li>
-
+        <% else %>
           <%= link_to 'contact', chatroom_path(@single_chatroom) %>
-
-        </li>
-      <% end %>
-      <li>Matériel: Kidizoom 🥲</li>
-    </ol>
-    <p class="tags">My Tags: </p>
+        <% end %>
+        Matériel: Kidizoom 🥲
+    </p>
+    <h3 class="tags">My Tags: </h3>
+  </div>
 </div>
 
 <%= render 'modals' %>
