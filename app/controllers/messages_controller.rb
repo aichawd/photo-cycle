@@ -10,11 +10,17 @@ class MessagesController < ApplicationController
     if @message.save
       ChatroomChannel.broadcast_to(
         @chatroom,
-        render_to_string(partial: "message", locals: {message: @message})
-      )
-      head :ok
+        {
+          html: render_to_string(partial: "message", locals: { message: @message }),
+        # broadcast the current_user's id so it is possible to verify in the
+        # stimulus controller if it corresponds or not with
+        # the client's current_user
+          user_id: @message.sender.id
+        }
+        )
+        head :ok
     else
-      render "chatrooms/show"
+      render "chatrooms/show", status: :unprocessable_entity
     end
   end
   def message_params
