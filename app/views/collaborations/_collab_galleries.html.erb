@@ -1,0 +1,28 @@
+<% @validated_collabs.reverse.each do |collab| %>
+        <div class="card-collab">
+          <div class="av1">
+            <% if collab.artist1.photo.attached? %>
+              <%= cl_image_tag collab.artist1.photo.key, class: "avatar"%>
+            <% end %>
+            <div class="av2">
+              <% if collab.artist2.photo.attached? %>
+                <%= cl_image_tag collab.artist2.photo.key, class: "avatar"%>
+              <% end %>
+            </div>
+            <%= link_to collab.name, collaboration_path(collab), class: "collab-name h5 mx-2 my-1"%>
+          </div>
+
+          <% if collab.pictures.count == 0 %>
+            <div class="text-center">No pictures yet</div>
+            <div class="text-center"><%= link_to "Start adding photos", new_picture_path, class: "btn btn-add" %></div>
+          <% end %>
+
+          <div class="collab-pictures d-flex">
+            <% collab.pictures.last(3).each do |pic| %>
+              <%= cl_image_tag pic.photo.key, height: "200"%>
+            <% end %>
+          </div>
+
+        </div>
+      <% end %>
+    </div>

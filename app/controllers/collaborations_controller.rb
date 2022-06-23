@@ -1,5 +1,5 @@
 class CollaborationsController < ApplicationController
-  before_action :set_collab, only: [:show, :update]
+  before_action :set_collab, only: [:show, :update, :destroy]
 
   def index
     my_id = current_user.id
@@ -38,6 +38,11 @@ class CollaborationsController < ApplicationController
       format.html { redirect_to collaborations_path }
       format.text { redirect_to collaborations_path }
     end
+  end
+
+  def destroy
+    @collab.destroy
+    redirect_to collaborations_path
   end
 
   private

@@ -1,0 +1,113 @@
+@import "user_feed";
+
+.collab-banner {
+  background-position: center;
+  padding: 150px 0;
+  margin-bottom: 24px;
+
+  h1 {
+    margin: 0;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    font-size: 32px;
+    font-weight: bold;
+  }
+}
+
+.collab-requests {
+  background: rgb(240, 240, 240);
+  border-radius: 4px;
+}
+
+.no_request {
+  font-size: 14px;
+  font-style: italic;
+  color: grey;
+}
+
+.card-collab {
+  overflow: hidden;
+  width: 80%;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 8px 8px;
+  margin: 16px 0px;
+  border-radius: 4px;
+
+  .collab-pictures {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    position: relative;
+  }
+
+  .btn-add {
+    background-color: black;
+    color: white;
+  }
+}
+
+.av1 {
+  position: relative;
+
+  .av2 {
+    position: absolute;
+    top: 4px;
+    left: 30px
+  }
+
+  .collab-name {
+  position: absolute;
+  top: 4px;
+  left: 80px;
+  text-decoration: none;
+  color: black;
+   }
+}
+
+
+
+.card-collab-pending {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 8px 8px;
+  margin: 8px 0px;
+  border-radius: 4px;
+
+  .collab-intro {
+    margin-bottom: 0px;
+    display: flex;
+    align-items: center;
+    color: grey;
+    font-style: italic;
+    font-size: 14px;
+
+    .sent_log{
+      margin: 0px 8px;
+    }
+
+    .sent_date {
+      font-size: 12px;
+    }
+  }
+
+  h5 {
+    margin-top: 0px;
+  }
+
+  .btn-accept {
+    background-color: black;
+    color: white;
+  }
+
+  .btn-refuse {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+  }
+
+  .cancel-request {
+    font-size: 12px;
+    color: grey;
+  }
+}
