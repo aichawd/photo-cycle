@@ -1,0 +1,27 @@
+<% @sent_pending.reverse.each do |collab| %>
+            <div class="card-collab-pending">
+              <div class="collab-intro mx-2">
+                <%= link_to gallery_path(collab.artist2.username) do %>
+                  <%= cl_image_tag collab.artist2.photo.key, class: "avatar"%>
+                <% end %>
+                <div class="sent_log">
+                  Collab request sent to <%= collab.artist2.username %>
+                  <div class="sent_date">
+                     <%= collab.created_at.strftime("%d/%m/%Y") %>
+                  </div>
+                </div>
+
+              </div>
+              <div class="collab-infos mx-2 my-1">
+                <h5><%= collab.name %></h5>
+                <%= collab.description %>
+              </div>
+              <div class="collab-answer d-flex justify-content-end mx-2">
+                <%= link_to "Cancel request",
+                  collaboration_path(collab),
+                  class: "cancel-request",
+                  method: :delete,
+                  data: { confirm: "Are you sure you want to cancel this request?" } %>
+              </div>
+            </div>
+        <% end %>

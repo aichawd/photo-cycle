@@ -1,0 +1,33 @@
+<% if @received_pending.count == 0 %>
+  <span class="no_request">No request pending</span>
+<% end %>
+
+<% @received_pending.reverse.each do |collab| %>
+                <div class="card-collab-pending" data-controller="answer-collab">
+                  <div class="d-flex collab-intro">
+                    <%= link_to gallery_path(collab.artist1.username) do %>
+                      <%= cl_image_tag collab.artist1.photo.key, class: "avatar mx-2"%>
+                    <% end %>
+                    <div class="sent_log">
+                      <%= collab.artist1.username %> is suggesting a collab
+                      <div class="sent_date">
+                      <%= collab.created_at.strftime("%d/%m/%Y") %>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="collab-infos mx-2 my-1">
+                    <h5><%= collab.name %></h5>
+                    <%= collab.description %>
+                  </div>
+                  <div class="collab-answer d-flex justify-content-end my-1">
+                    <%= simple_form_for collab, html: {data: { answer_collab_target: "form", action: "submit->answer-collab#updatestatus"} } do |f| %>
+                      <%= hidden_field_tag 'status', 1 %>
+                      <%= f.submit "Accept", class: "btn btn-accept mx-1" %>
+                    <% end %>
+                    <%= simple_form_for collab, html: {data: { answer_collab_target: "form", action: "submit->answer-collab#updatestatus"} } do |f| %>
+                      <%= hidden_field_tag 'status', 2 %>
+                      <%= f.submit "Refuse", class: "btn btn-refuse mx-1" %>
+                    <% end %>
+                  </div>
+                </div>
+              <% end %>
