@@ -11,6 +11,7 @@
             </div>
             <%= link_to collab.name, collaboration_path(collab), class: "collab-name h5 mx-2 my-1"%>
           </div>
+          <br>
 
           <% if collab.pictures.count == 0 %>
             <div class="text-center">No pictures yet</div>
@@ -18,9 +19,25 @@
           <% end %>
 
           <div class="collab-pictures d-flex">
-            <% collab.pictures.last(3).each do |pic| %>
-              <%= cl_image_tag pic.photo.key, height: "200"%>
+            <% lastpics = collab.pictures.last(3) %>
+
+            <% if lastpics.count == 1 %>
+              <%= cl_image_tag collab.pictures[0].photo.key, height: "300", width:"100%" %>
             <% end %>
+
+            <% if lastpics.count == 2 %>
+              <%= cl_image_tag collab.pictures[0].photo.key, height: "300", width:"340" %>
+              <%= cl_image_tag collab.pictures[1].photo.key, height: "300", width:"340" %>
+            <% end %>
+
+            <% if lastpics.count == 3 %>
+              <%= cl_image_tag collab.pictures[0].photo.key, height: "300", width:"340" %>
+                <div class="d-flex flex-column">
+                  <%= cl_image_tag collab.pictures[1].photo.key, height: "150", width:"340", class: "pb-1" %>
+                  <%= cl_image_tag collab.pictures[2].photo.key, height: "150", width:"340" %>
+                </div>
+            <% end %>
+
           </div>
 
         </div>
