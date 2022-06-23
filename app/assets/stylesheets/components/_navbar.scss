@@ -1,14 +1,19 @@
+@import "pages/user_feed";
+
 .navbar-lewagon {
   justify-content: space-between;
+  align-items: center;
+  height: 92px;
   background: white;
-  padding-left: 150px;
-  padding-right: 150px;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 90px;
+.text-logo {
+  font-family: "Syne";
+  font-size: 16px;
+  font-weight: 800;
+  color: black;
 }
