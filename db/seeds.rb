@@ -18,7 +18,7 @@ img = URI.open('https://ca.slack-edge.com/T02NE0241-U010LE2G2MV-875acd0f9038-512
 jeremy.photo.attach(io: img, filename: "jeremy.jpg", content_type: 'image/jpg')
 jeremy.save!
 
-nadia = User.new(first_name: 'nadia', last_name: 'Auger', username:'Nadia', email: 'nadia@photocycle.com', password: 'azerty')
+nadia = User.new(first_name: 'Nadia', last_name: 'Auger', username:'Nadia', email: 'nadia@photocycle.com', password: 'azerty')
 img = URI.open('https://ca.slack-edge.com/T02NE0241-UP65W8HLN-3e225350d956-192')
 nadia.photo.attach(io: img, filename: "nadia.jpg", content_type: 'image/jpg')
 nadia.save!
@@ -53,6 +53,7 @@ portrait = Category.create(name: "Portrait") #Paul #nadia
 
 landscape = Category.create(name: "Landscape") # Alex - Aicha - Jeremy
 
+animal = Category.create(name: "Animal")
 
 black_and_white = Category.create(name: "Black & White")
 
@@ -64,12 +65,11 @@ polar = Category.create(name: "Polar") #Bruno
 
 ancient = Category.create(name: "Ancient") #nadia
 
-
-# ************************** TOUTES LES PHOTOS SONT AU FORMAT 387 - 460 - 520 + 2photos à 800 *********************************
+architecture = Category.create(name: 'Architecture') 
 
 
 #ok
-# PORTRAIT PAUL X BRUNO
+# PORTRAIT PAUL
 photo_unsplash = Picture.new
 img_url = 'https://images.unsplash.com/photo-1560787313-5dff3307e257?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
 file = URI.open(img_url)
@@ -80,7 +80,6 @@ photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = portrait
 photo_unsplash_category.save!
-
 
 #NB
 photo_unsplash = Picture.new
@@ -318,33 +317,6 @@ photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = portrait
 photo_unsplash_category.save!
-
-
-=begin
-photo_unsplash = Picture.new
-img_url = ''
-file = URI.open(img_url)
-photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
-photo_unsplash.user = paul
-photo_unsplash.save!
-photo_unsplash_category = PhotoCategory.new
-photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = portrait
-photo_unsplash_category.save!
-
-
-photo_unsplash = Picture.new
-img_url = ''
-file = URI.open(img_url)
-photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
-photo_unsplash.user = paul
-photo_unsplash.save!
-photo_unsplash_category = PhotoCategory.new
-photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = portrait
-photo_unsplash_category.save!
-=end
-
 
 
 photo_unsplash = Picture.new
@@ -951,11 +923,11 @@ photo_unsplash.user = alex
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = desert
+photo_unsplash_category.category = landscape
 photo_unsplash_category.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = landscape
+photo_unsplash_category.category = desert
 photo_unsplash_category.save!
 
 photo_unsplash = Picture.new
@@ -966,11 +938,11 @@ photo_unsplash.user = alex
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = desert
+photo_unsplash_category.category = landscape
 photo_unsplash_category.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = landscape
+photo_unsplash_category.category = desert
 photo_unsplash_category.save!
 
 photo_unsplash = Picture.new
@@ -981,11 +953,11 @@ photo_unsplash.user = alex
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = desert
+photo_unsplash_category.category = landscape
 photo_unsplash_category.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = landscape
+photo_unsplash_category.category = desert
 photo_unsplash_category.save!
 
 photo_unsplash = Picture.new
@@ -996,11 +968,15 @@ photo_unsplash.user = alex
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = desert
 photo_unsplash_category.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = landscape
+photo_unsplash_category.category = animal
 photo_unsplash_category.save!
 
 photo_unsplash = Picture.new
@@ -1011,11 +987,11 @@ photo_unsplash.user = alex
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = desert
+photo_unsplash_category.category = landscape
 photo_unsplash_category.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = landscape
+photo_unsplash_category.category = desert
 photo_unsplash_category.save!
 
 photo_unsplash = Picture.new
@@ -1026,11 +1002,11 @@ photo_unsplash.user = alex
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = desert
+photo_unsplash_category.category = landscape
 photo_unsplash_category.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = landscape
+photo_unsplash_category.category = desert
 photo_unsplash_category.save!
 
 photo_unsplash = Picture.new
@@ -1041,11 +1017,11 @@ photo_unsplash.user = alex
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = desert
+photo_unsplash_category.category = landscape
 photo_unsplash_category.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = landscape
+photo_unsplash_category.category = desert
 photo_unsplash_category.save!
 
 photo_unsplash = Picture.new
@@ -1056,11 +1032,11 @@ photo_unsplash.user = alex
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = desert
+photo_unsplash_category.category = landscape
 photo_unsplash_category.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = landscape
+photo_unsplash_category.category = desert
 photo_unsplash_category.save!
 
 photo_unsplash = Picture.new
@@ -1071,11 +1047,11 @@ photo_unsplash.user = alex
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = desert
+photo_unsplash_category.category = landscape
 photo_unsplash_category.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = landscape
+photo_unsplash_category.category = desert
 photo_unsplash_category.save!
 
 photo_unsplash = Picture.new
@@ -1086,11 +1062,11 @@ photo_unsplash.user = alex
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = desert
+photo_unsplash_category.category = landscape
 photo_unsplash_category.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = landscape
+photo_unsplash_category.category = desert
 photo_unsplash_category.save!
 
 photo_unsplash = Picture.new
@@ -1101,11 +1077,11 @@ photo_unsplash.user = alex
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = desert
+photo_unsplash_category.category = landscape
 photo_unsplash_category.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = landscape
+photo_unsplash_category.category = desert
 photo_unsplash_category.save!
 
 photo_unsplash = Picture.new
@@ -1116,11 +1092,11 @@ photo_unsplash.user = alex
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = desert
+photo_unsplash_category.category = landscape
 photo_unsplash_category.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = landscape
+photo_unsplash_category.category = desert
 photo_unsplash_category.save!
 
 photo_unsplash = Picture.new
@@ -1131,11 +1107,11 @@ photo_unsplash.user = alex
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = desert
+photo_unsplash_category.category = landscape
 photo_unsplash_category.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = landscape
+photo_unsplash_category.category = desert
 photo_unsplash_category.save!
 
 photo_unsplash = Picture.new
@@ -1146,11 +1122,11 @@ photo_unsplash.user = alex
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = desert
+photo_unsplash_category.category = landscape
 photo_unsplash_category.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = landscape
+photo_unsplash_category.category = desert
 photo_unsplash_category.save!
 
 
@@ -1162,11 +1138,11 @@ photo_unsplash.user = alex
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = desert
+photo_unsplash_category.category = landscape
 photo_unsplash_category.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = landscape
+photo_unsplash_category.category = desert
 photo_unsplash_category.save!
 
 
@@ -1178,11 +1154,11 @@ photo_unsplash.user = alex
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = desert
+photo_unsplash_category.category = landscape
 photo_unsplash_category.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = landscape
+photo_unsplash_category.category = desert
 photo_unsplash_category.save!
 
 photo_unsplash = Picture.new
@@ -1193,11 +1169,11 @@ photo_unsplash.user = alex
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = desert
+photo_unsplash_category.category = landscape
 photo_unsplash_category.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = landscape
+photo_unsplash_category.category = desert
 photo_unsplash_category.save!
 
 
@@ -1209,11 +1185,15 @@ photo_unsplash.user = alex
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = desert
 photo_unsplash_category.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = landscape
+photo_unsplash_category.category = animal
 photo_unsplash_category.save!
 
 
@@ -1225,11 +1205,11 @@ photo_unsplash.user = alex
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = desert
+photo_unsplash_category.category = landscape
 photo_unsplash_category.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = landscape
+photo_unsplash_category.category = desert
 photo_unsplash_category.save!
 
 photo_unsplash = Picture.new
@@ -1240,11 +1220,11 @@ photo_unsplash.user = alex
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = desert
+photo_unsplash_category.category = landscape
 photo_unsplash_category.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = landscape
+photo_unsplash_category.category = desert
 photo_unsplash_category.save!
 
 
@@ -1256,11 +1236,11 @@ photo_unsplash.user = alex
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = desert
+photo_unsplash_category.category = landscape
 photo_unsplash_category.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = landscape
+photo_unsplash_category.category = desert
 photo_unsplash_category.save!
 
 
@@ -1272,11 +1252,11 @@ photo_unsplash.user = alex
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = desert
+photo_unsplash_category.category = landscape
 photo_unsplash_category.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = landscape
+photo_unsplash_category.category = desert
 photo_unsplash_category.save!
 
 
@@ -1288,11 +1268,11 @@ photo_unsplash.user = alex
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = desert
+photo_unsplash_category.category = landscape
 photo_unsplash_category.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = landscape
+photo_unsplash_category.category = desert
 photo_unsplash_category.save!
 
 
@@ -1304,11 +1284,11 @@ photo_unsplash.user = alex
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = desert
+photo_unsplash_category.category = landscape
 photo_unsplash_category.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = landscape
+photo_unsplash_category.category = desert
 photo_unsplash_category.save!
 
 
@@ -1320,14 +1300,31 @@ photo_unsplash.user = alex
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = desert
 photo_unsplash_category.save!
+
+photo_unsplash = Picture.new
+img_url = 'https://images.unsplash.com/photo-1530871485912-310c2ac29b80?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=456&q=80'
+file = URI.open(img_url)
+photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
+photo_unsplash.user = alex
+photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = landscape
 photo_unsplash_category.save!
-
-
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = desert
+photo_unsplash_category.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = animal
+photo_unsplash_category.save!
 
 
 #POLAR BRUNO
@@ -1337,6 +1334,10 @@ file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = bruno
 photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = polar
@@ -1351,6 +1352,10 @@ photo_unsplash.user = bruno
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = polar
 photo_unsplash_category.save!
 
@@ -1361,6 +1366,10 @@ file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = bruno
 photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = polar
@@ -1375,7 +1384,15 @@ photo_unsplash.user = bruno
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = polar
+photo_unsplash_category.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = animal
 photo_unsplash_category.save!
 
 photo_unsplash = Picture.new
@@ -1384,6 +1401,10 @@ file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = bruno
 photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = polar
@@ -1398,6 +1419,10 @@ photo_unsplash.user = bruno
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = polar
 photo_unsplash_category.save!
 
@@ -1410,6 +1435,10 @@ photo_unsplash.user = bruno
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = polar
 photo_unsplash_category.save!
 
@@ -1419,6 +1448,10 @@ file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = bruno
 photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = polar
@@ -1433,7 +1466,15 @@ photo_unsplash.user = bruno
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = polar
+photo_unsplash_category.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = animal
 photo_unsplash_category.save!
 
 
@@ -1445,6 +1486,10 @@ photo_unsplash.user = bruno
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = polar
 photo_unsplash_category.save!
 
@@ -1454,6 +1499,10 @@ file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = bruno
 photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = polar
@@ -1468,6 +1517,10 @@ photo_unsplash.user = bruno
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = polar
 photo_unsplash_category.save!
 
@@ -1480,6 +1533,10 @@ photo_unsplash.user = bruno
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = polar
 photo_unsplash_category.save!
 
@@ -1489,6 +1546,10 @@ file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = bruno
 photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = polar
@@ -1503,6 +1564,10 @@ photo_unsplash.user = bruno
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = polar
 photo_unsplash_category.save!
 
@@ -1512,6 +1577,10 @@ file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = bruno
 photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = polar
@@ -1527,6 +1596,10 @@ photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = polar
 photo_unsplash_category.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = animal
+photo_unsplash_category.save!
 
 photo_unsplash = Picture.new
 img_url = 'https://images.unsplash.com/photo-1504964306813-50d4333f6968?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
@@ -1534,6 +1607,10 @@ file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = bruno
 photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = polar
@@ -1548,6 +1625,10 @@ photo_unsplash.user = bruno
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = polar
 photo_unsplash_category.save!
 
@@ -1557,6 +1638,10 @@ file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = bruno
 photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = polar
@@ -1570,6 +1655,10 @@ photo_unsplash.user = bruno
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = polar
 photo_unsplash_category.save!
 
@@ -1579,6 +1668,10 @@ file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = bruno
 photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = polar
@@ -1592,6 +1685,10 @@ photo_unsplash.user = bruno
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = polar
 photo_unsplash_category.save!
 
@@ -1601,6 +1698,10 @@ file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = bruno
 photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = polar
@@ -1614,6 +1715,10 @@ photo_unsplash.user = bruno
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = polar
 photo_unsplash_category.save!
 
@@ -1625,7 +1730,15 @@ photo_unsplash.user = bruno
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = polar
+photo_unsplash_category.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = animal
 photo_unsplash_category.save!
 
 
@@ -1635,6 +1748,10 @@ file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = bruno
 photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = polar
@@ -1648,6 +1765,10 @@ photo_unsplash.user = bruno
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = polar
 photo_unsplash_category.save!
 
@@ -1657,6 +1778,10 @@ file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = bruno
 photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = landscape
+photo_unsplash_category.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = polar
@@ -1672,6 +1797,10 @@ photo_unsplash.user = nadia
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = architecture
+photo_unsplash_category.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = ancient
 photo_unsplash_category.save!
 
@@ -1681,6 +1810,10 @@ file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = nadia
 photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = architecture
+photo_unsplash_category.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = ancient
@@ -1694,6 +1827,10 @@ photo_unsplash.user = nadia
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = architecture
+photo_unsplash_category.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = ancient
 photo_unsplash_category.save!
 
@@ -1705,6 +1842,10 @@ photo_unsplash.user = nadia
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = architecture
+photo_unsplash_category.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = ancient
 photo_unsplash_category.save!
 
@@ -1714,6 +1855,10 @@ file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = nadia
 photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = architecture
+photo_unsplash_category.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = ancient
@@ -1738,6 +1883,10 @@ photo_unsplash.user = nadia
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = architecture
+photo_unsplash_category.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = ancient
 photo_unsplash_category.save!
 
@@ -1747,6 +1896,10 @@ file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = nadia
 photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = architecture
+photo_unsplash_category.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = ancient
@@ -1760,6 +1913,10 @@ photo_unsplash.user = nadia
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = architecture
+photo_unsplash_category.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = ancient
 photo_unsplash_category.save!
 
@@ -1769,6 +1926,10 @@ file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = nadia
 photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = architecture
+photo_unsplash_category.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = ancient
@@ -1782,6 +1943,10 @@ photo_unsplash.user = nadia
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = architecture
+photo_unsplash_category.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = ancient
 photo_unsplash_category.save!
 
@@ -1791,6 +1956,10 @@ file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = nadia
 photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = architecture
+photo_unsplash_category.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = ancient
@@ -1804,6 +1973,10 @@ photo_unsplash.user = nadia
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = architecture
+photo_unsplash_category.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = ancient
 photo_unsplash_category.save!
 
@@ -1813,6 +1986,10 @@ file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = nadia
 photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = architecture
+photo_unsplash_category.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = ancient
@@ -1826,6 +2003,10 @@ photo_unsplash.user = nadia
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = architecture
+photo_unsplash_category.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = ancient
 photo_unsplash_category.save!
 
@@ -1835,6 +2016,10 @@ file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = nadia
 photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = architecture
+photo_unsplash_category.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = ancient
@@ -1848,6 +2033,10 @@ photo_unsplash.user = nadia
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = architecture
+photo_unsplash_category.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = ancient
 photo_unsplash_category.save!
 
@@ -1857,6 +2046,10 @@ file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = nadia
 photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = architecture
+photo_unsplash_category.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = ancient
@@ -1870,6 +2063,10 @@ photo_unsplash.user = nadia
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = architecture
+photo_unsplash_category.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = ancient
 photo_unsplash_category.save!
 
@@ -1879,6 +2076,10 @@ file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = nadia
 photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = architecture
+photo_unsplash_category.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = ancient
@@ -1892,6 +2093,10 @@ photo_unsplash.user = nadia
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = architecture
+photo_unsplash_category.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = ancient
 photo_unsplash_category.save!
 
@@ -1901,6 +2106,10 @@ file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = nadia
 photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = architecture
+photo_unsplash_category.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = ancient
@@ -1914,6 +2123,10 @@ photo_unsplash.user = nadia
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = architecture
+photo_unsplash_category.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = ancient
 photo_unsplash_category.save!
 
@@ -1923,6 +2136,10 @@ file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = nadia
 photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = architecture
+photo_unsplash_category.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = ancient
@@ -1936,6 +2153,10 @@ photo_unsplash.user = nadia
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = architecture
+photo_unsplash_category.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = ancient
 photo_unsplash_category.save!
 
@@ -1945,6 +2166,10 @@ file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = nadia
 photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = architecture
+photo_unsplash_category.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = ancient
@@ -1958,6 +2183,10 @@ photo_unsplash.user = nadia
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = architecture
+photo_unsplash_category.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = ancient
 photo_unsplash_category.save!
 
@@ -1967,6 +2196,10 @@ file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = nadia
 photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = architecture
+photo_unsplash_category.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = ancient
@@ -1980,73 +2213,89 @@ photo_unsplash.user = nadia
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = ancient
+photo_unsplash_category.category = architecture
 photo_unsplash_category.save!
-
-=begin
-photo_unsplash = Picture.new
-img_url = ''
-file = URI.open(img_url)
-photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
-photo_unsplash.user = nadia
-photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = ancient
 photo_unsplash_category.save!
 
+#Kenken
 photo_unsplash = Picture.new
-img_url = ''
+img_url = 'https://images.unsplash.com/photo-1560131653-63257db002c8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=415&q=80'
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
-photo_unsplash.user = nadia
+photo_unsplash.user = kenza
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = ancient
+photo_unsplash_category.category = architecture
 photo_unsplash_category.save!
 
 photo_unsplash = Picture.new
-img_url = ''
+img_url = 'https://images.unsplash.com/photo-1625447521754-764d517239e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=386&q=80'
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
-photo_unsplash.user = nadia
+photo_unsplash.user = kenza
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = ancient
+photo_unsplash_category.category = architecture
 photo_unsplash_category.save!
 
 photo_unsplash = Picture.new
-img_url = ''
+img_url = 'https://images.unsplash.com/photo-1516490544528-22091aa72ac8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
-photo_unsplash.user = nadia
+photo_unsplash.user = kenza
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = ancient
+photo_unsplash_category.category = architecture
+photo_unsplash_category.save!
+
+
+photo_unsplash = Picture.new
+img_url = 'https://images.unsplash.com/photo-1518893228544-d6c4eee24344?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=334&q=80'
+file = URI.open(img_url)
+photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
+photo_unsplash.user = kenza
+photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = architecture
 photo_unsplash_category.save!
 
 photo_unsplash = Picture.new
-img_url = ''
+img_url = 'https://images.unsplash.com/photo-1564803464063-9656b41896b4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=474&q=80'
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
-photo_unsplash.user = nadia
+photo_unsplash.user = kenza
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = ancient
+photo_unsplash_category.category = architecture
 photo_unsplash_category.save!
 
 photo_unsplash = Picture.new
-img_url = ''
+img_url = 'https://images.unsplash.com/photo-1625153494797-0fe435e827ae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
-photo_unsplash.user = nadia
+photo_unsplash.user = kenza
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
-photo_unsplash_category.category = ancient
+photo_unsplash_category.category = architecture
 photo_unsplash_category.save!
-=end
+
+
+photo_unsplash = Picture.new
+img_url = 'https://images.unsplash.com/photo-1613598764441-f07ca44c30ba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80'
+file = URI.open(img_url)
+photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
+photo_unsplash.user = kenza
+photo_unsplash.save!
+photo_unsplash_category = PhotoCategory.new
+photo_unsplash_category.picture = photo_unsplash
+photo_unsplash_category.category = architecture
+photo_unsplash_category.save!
