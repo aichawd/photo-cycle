@@ -1,4 +1,4 @@
-<div class='user-banner' style="background-image: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1550895030-823330fc2551?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80)">
+<div class='user-banner mb-2' style="background-image: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1550895030-823330fc2551?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80)">
   <div class="banner-container">
     <h1 style="margin-bottom: 0px;">
       <% if @user.photo.attached? %>
@@ -28,40 +28,90 @@
 
 <%= render 'modals' %>
 
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <button class="nav-link active" id="nav-main-tab" data-bs-toggle="tab" data-bs-target="#nav-main" type="button" role="tab" aria-controls="nav-main" aria-selected="true">Personal gallery</button>
+    <button class="nav-link" id="nav-collabs-tab" data-bs-toggle="tab" data-bs-target="#nav-collabs" type="button" role="tab" aria-controls="nav-collabs" aria-selected="false">Collabs</button>
+  </div>
+</nav>
 
-
-<div class="photo-behavior" data-controller="view-photo">
-  <ul>
-    <% @user_pictures.each do |pic| %>
-      <li>
-        <a data-action="click->view-photo#view">
-          <%= cl_image_tag pic.photo.key %>
-        </a>
-        <% if @user == current_user %>
-          <div class="dropdown">
-            <a  type="button" class="dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i id="edit_pencil" class="fas fa-edit"></i>
+<div class="tab-content" id="nav-tabContent">
+  <div class="tab-pane fade show active" id="nav-main" role="tabpanel" aria-labelledby="nav-main-tab">
+    <div class="photo-behavior" data-controller="view-photo">
+      <ul>
+        <% @user_pictures.each do |pic| %>
+          <li>
+            <a data-action="click->view-photo#view">
+              <%= cl_image_tag pic.photo.key %>
             </a>
-            <div class="dropdown-menu">
-              <%= link_to "Edit", "#", class: "dropdown-item" %>
-              <%= link_to "Delete",
-                    picture_path(pic),
-                    method: :delete,
-                    data: { confirm: "Are you sure you want to delete this picture? This action is irreversible." },
-                    class: "dropdown-item" %>
-            </div>
-          </div>
-        <% end %>
-        <div id="gallery_modal" class="modal" data-controller="modal" data-view-photo-target="modal">
-          <div class="modal-dialog">
-              <div id="gallery_modal_content" class="modal-content">
-                <a class="link-secondary" data-action="click->modal#close">Close</a>
-                <div data-modal-target="photo">
+            <% if @user == current_user %>
+              <div class="dropdown">
+                <a  type="button" class="dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i id="edit_pencil" class="fas fa-edit"></i>
+                </a>
+                <div class="dropdown-menu">
+                  <%= link_to "Edit", "#", class: "dropdown-item" %>
+                  <%= link_to "Delete",
+                        picture_path(pic),
+                        method: :delete,
+                        data: { confirm: "Are you sure you want to delete this picture? This action is irreversible." },
+                        class: "dropdown-item" %>
                 </div>
               </div>
-          </div>
-        </div>
-      </li>
-    <% end %>
-  </ul>
+            <% end %>
+            <div id="gallery_modal" class="modal" data-controller="modal" data-view-photo-target="modal">
+              <div class="modal-dialog">
+                  <div id="gallery_modal_content" class="modal-content">
+                    <a class="link-secondary" data-action="click->modal#close">Close</a>
+                    <div data-modal-target="photo">
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+  <div class="tab-pane fade" id="nav-collabs" role="tabpanel" aria-labelledby="nav-collabs-tab">
+    <div class="photo-behavior" data-controller="view-photo">
+      <ul>
+        <% @user_collab_pictures.each do |pic| %>
+          <li class="collab-pic">
+            <a data-action="click->view-photo#view">
+              <%= cl_image_tag pic.photo.key %>
+            </a>
+            <% if @user == current_user %>
+              <div class="dropdown">
+                <a  type="button" class="dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i id="edit_pencil" class="fas fa-edit"></i>
+                </a>
+                <div class="dropdown-menu">
+                  <%= link_to "Edit", "#", class: "dropdown-item" %>
+                  <%= link_to "Delete",
+                        picture_path(pic),
+                        method: :delete,
+                        data: { confirm: "Are you sure you want to delete this picture? This action is irreversible." },
+                        class: "dropdown-item" %>
+                </div>
+              </div>
+            <% end %>
+            <% collab = Collaboration.find(pic.collaboration_id) %>
+            <%= link_to collab.name, collaboration_path(collab), class:"collab-name"%>
+            <div id="gallery_modal" class="modal" data-controller="modal" data-view-photo-target="modal">
+              <div class="modal-dialog">
+                  <div id="gallery_modal_content" class="modal-content">
+                    <a class="link-secondary" data-action="click->modal#close">Close</a>
+                    <div data-modal-target="photo">
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
 </div>
