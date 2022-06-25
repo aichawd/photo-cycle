@@ -1,21 +1,24 @@
 <div data-controller="chatrooms">
   <div class="d-flex">
 
-    <div id="user_list">
+    <div id="user_list" class="user_list">
       <ul>
         <% @chatrooms.each do |chatroom| %>
           <li class="chatroom_card" data-action="click->chatrooms#show" data-url="<%= chatroom_path(chatroom) %>">
             <div class="d-flex align-items-center">
             <%= link_to gallery_path(chatroom.interlocutor(current_user).username) do %>
-              <%= cl_image_tag chatroom.interlocutor(current_user).photo.key, class: "avatar mx-2"%>
+              <%= cl_image_tag chatroom.interlocutor(current_user).photo.key, class: "avatar mx-2", class: "chatroom-avatar"%>
               <% end %>
-            <p class="interlocutor"><%= chatroom.interlocutor(current_user).username %></p>
+              <div class="interlocutor-info">
+                <p class="interlocutor"><%= chatroom.interlocutor(current_user).username %></p>
+                <p class="chatroom_message">
+                <% if chatroom.messages.last %>
+                  <%= chatroom.messages.last.content.truncate(70) %>
+                <% end %>
+             </p>
+              </div>
+
             </div>
-            <p class="chatroom_message">
-              <% if chatroom.messages.last %>
-                <%= chatroom.messages.last.content.truncate(70) %>
-              <% end %>
-            </p>
           </li>
 
         <% end %>
@@ -26,6 +29,4 @@
 
     <div id="conversation" data-chatrooms-target="chatroomContainer"></div>
   </div>
-
-  <div id="content"></div>
 </div>
