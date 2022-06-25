@@ -24,7 +24,8 @@
   position: sticky;
   top: 0;
   padding: 10px 20px;
-  background-color: grey;
+  background-color:  #e6e6e6
+  ;
   display: flex;
   border-radius: 8px;
 }
@@ -91,6 +92,11 @@
   cursor: pointer;
   margin: 1rem auto;
   padding: 0.25rem 0.5rem;
+}
+
+.chatroom_card:hover {
+  background-color: #999;
+  border-radius: 10px;
 }
 
 .chatroom {
