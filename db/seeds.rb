@@ -6,6 +6,12 @@ Picture.destroy_all
 Category.destroy_all
 User.destroy_all
 
+BOITIERS = ["Sony A7 IV", "Fujifilm X-T4", "Canon EOS R6", "OM System OM-1", "Nikon Z6 II", "Fujifilm X-S10", "Nikon Z fc", "Canon EOS R5", "Fujifilm X100V", "Canon EOS R3"]
+OBJECTIFS = ["11-24mm", "15-45mm", "28-75mm", "50mm", "18-135mm", "50-140mm", "55-250mm", "70-200mm", "100mm", "100-300mm"]
+OUVERTURES = %w[f/1.4 f/1.8 f/2.0 f/2.8 f/4.0 f/5.6 f/8.0 f/11.0 f/14.0 f/16.0] # plus petite est la valeur, plus lumineuse est l'image et moins la profondeur de champ est grande)
+TEMPS_POSE = %w[1/60s 1/80s 1/100s 1/125s 1/160s 1/200s 1/250s 1/320s 1/400s 1/500s 1/1000s]
+SENSIBILITE = %w[100 125 160 200 250 320 400 500 640 800 1000 1250 1600 2000 2500 3200 4000 5000 6400 8000 10000 12800]
+
 # User.new(first_name: , last_name: , email: , password: )
 
 paul = User.new(first_name: 'Paul', last_name: 'Portier', username:'Paul', email: 'paul@photocycle.com', password: 'azerty')
