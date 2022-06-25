@@ -51,14 +51,14 @@
     </div>
   </nav>
 
+  <!-- PERSONAL PHOTOS -->
   <div class="tab-content" id="nav-tabContent">
     <div class="tab-pane fade show active" id="nav-main" role="tabpanel" aria-labelledby="nav-main-tab">
       <div class="photo-behavior" data-controller="view-photo">
         <ul>
           <% @user_pictures.each do |pic| %>
             <li data-user-search-target="image"
-                data-categories="<%= pic.categories.map(&:name).join(' ') %>"
-                style="transition: all ease 1s;">
+                data-categories="<%= pic.categories.map(&:name).join(' ') %>">
               <a data-action="click->view-photo#view">
                 <%= cl_image_tag pic.photo.key %>
               </a>
@@ -83,6 +83,8 @@
                       <a class="link-secondary" data-action="click->modal#close">Close</a>
                       <div data-modal-target="photo">
                       </div>
+                      <p class="mx-3"><%= pic.boitier %> <%= pic.objectif %></p>
+                      <p class="mx-3"><%= pic.ouverture %> <%= pic.temps_pose %> ISO<%= pic.sensibilite %></p>
                     </div>
                 </div>
               </div>
@@ -92,6 +94,7 @@
       </div>
     </div>
 
+    <!-- COLLABORATION PHOTOS -->
     <div class="tab-pane fade" id="nav-collabs" role="tabpanel" aria-labelledby="nav-collabs-tab">
       <div class="photo-behavior" data-controller="view-photo">
         <ul>

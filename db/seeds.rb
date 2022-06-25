@@ -9,10 +9,10 @@ User.destroy_all
 BOITIERS = ["Sony A7 IV", "Fujifilm X-T4", "Canon EOS R6", "OM System OM-1", "Nikon Z6 II", "Fujifilm X-S10", "Nikon Z fc", "Canon EOS R5", "Fujifilm X100V", "Canon EOS R3"]
 OBJECTIFS = ["11-24mm", "15-45mm", "28-75mm", "50mm", "18-135mm", "50-140mm", "55-250mm", "70-200mm", "100mm", "100-300mm"]
 OUVERTURES = %w[f/1.4 f/1.8 f/2.0 f/2.8 f/4.0 f/5.6 f/8.0 f/11.0 f/14.0 f/16.0] # plus petite est la valeur, plus lumineuse est l'image et moins la profondeur de champ est grande)
-TEMPS_POSE = %w[1/60s 1/80s 1/100s 1/125s 1/160s 1/200s 1/250s 1/320s 1/400s 1/500s 1/1000s]
-SENSIBILITE = %w[100 125 160 200 250 320 400 500 640 800 1000 1250 1600 2000 2500 3200 4000 5000 6400 8000 10000 12800]
+TEMPS_POSES = %w[1/60s 1/80s 1/100s 1/125s 1/160s 1/200s 1/250s 1/320s 1/400s 1/500s 1/1000s]
+SENSIBILITES = %w[100 125 160 200 250 320 400 500 640 800 1000 1250 1600 2000 2500 3200 4000 5000 6400 8000 10000 12800]
 
-# User.new(first_name: , last_name: , email: , password: )
+# USER SEEDS
 
 paul = User.new(first_name: 'Paul', last_name: 'Portier', username:'Paul', email: 'paul@photocycle.com', password: 'azerty')
 img = URI.open('https://ca.slack-edge.com/T02NE0241-UP3USJP7F-55bf4dafd2c6-512')
@@ -54,7 +54,7 @@ img = URI.open('https://ca.slack-edge.com/T02NE0241-U02TPH1HNK1-32225ca26924-512
 aicha.photo.attach(io: img, filename: "aicha.jpg", content_type: 'image/jpg')
 aicha.save!
 
-# create categories
+# CATEGORY SEEDS
 portrait = Category.create(name: "Portrait") #Paul #nadia
 
 landscape = Category.create(name: "Landscape") # Alex - Aicha - Jeremy
@@ -82,6 +82,11 @@ img_url = 'https://images.unsplash.com/photo-1560787313-5dff3307e257?ixlib=rb-1.
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = paul
+photo_unsplash.boitier = BOITIERS.sample
+photo_unsplash.objectif = OBJECTIFS.sample
+photo_unsplash.ouverture = OUVERTURES.sample
+photo_unsplash.temps_pose = TEMPS_POSES.sample
+photo_unsplash.sensibilite = SENSIBILITES.sample
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
@@ -95,6 +100,11 @@ img_url = 'https://images.unsplash.com/photo-1504553101389-41a8f048c3ba?ixlib=rb
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = paul
+photo_unsplash.boitier = BOITIERS.sample
+photo_unsplash.objectif = OBJECTIFS.sample
+photo_unsplash.ouverture = OUVERTURES.sample
+photo_unsplash.temps_pose = TEMPS_POSES.sample
+photo_unsplash.sensibilite = SENSIBILITES.sample
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
@@ -112,6 +122,11 @@ img_url = 'https://images.unsplash.com/photo-1444069069008-83a57aac43ac?ixlib=rb
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = paul
+photo_unsplash.boitier = BOITIERS.sample
+photo_unsplash.objectif = OBJECTIFS.sample
+photo_unsplash.ouverture = OUVERTURES.sample
+photo_unsplash.temps_pose = TEMPS_POSES.sample
+photo_unsplash.sensibilite = SENSIBILITES.sample
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
@@ -129,6 +144,11 @@ img_url = 'https://images.unsplash.com/photo-1518200925927-aa63b1e57a84?ixlib=rb
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = paul
+photo_unsplash.boitier = BOITIERS.sample
+photo_unsplash.objectif = OBJECTIFS.sample
+photo_unsplash.ouverture = OUVERTURES.sample
+photo_unsplash.temps_pose = TEMPS_POSES.sample
+photo_unsplash.sensibilite = SENSIBILITES.sample
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
@@ -142,6 +162,11 @@ img_url = 'https://images.unsplash.com/photo-1549150712-1d243024db80?ixlib=rb-1.
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = paul
+photo_unsplash.boitier = BOITIERS.sample
+photo_unsplash.objectif = OBJECTIFS.sample
+photo_unsplash.ouverture = OUVERTURES.sample
+photo_unsplash.temps_pose = TEMPS_POSES.sample
+photo_unsplash.sensibilite = SENSIBILITES.sample
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
@@ -159,6 +184,11 @@ img_url = 'https://images.unsplash.com/photo-1488820098099-8d4a4723a490?ixlib=rb
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = paul
+photo_unsplash.boitier = BOITIERS.sample
+photo_unsplash.objectif = OBJECTIFS.sample
+photo_unsplash.ouverture = OUVERTURES.sample
+photo_unsplash.temps_pose = TEMPS_POSES.sample
+photo_unsplash.sensibilite = SENSIBILITES.sample
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
@@ -172,6 +202,11 @@ img_url = 'https://images.unsplash.com/photo-1599925002316-82ab470937ce?ixlib=rb
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = paul
+photo_unsplash.boitier = BOITIERS.sample
+photo_unsplash.objectif = OBJECTIFS.sample
+photo_unsplash.ouverture = OUVERTURES.sample
+photo_unsplash.temps_pose = TEMPS_POSES.sample
+photo_unsplash.sensibilite = SENSIBILITES.sample
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
@@ -190,6 +225,11 @@ img_url = 'https://images.unsplash.com/photo-1544124094-8aea0374da93?ixlib=rb-1.
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = paul
+photo_unsplash.boitier = BOITIERS.sample
+photo_unsplash.objectif = OBJECTIFS.sample
+photo_unsplash.ouverture = OUVERTURES.sample
+photo_unsplash.temps_pose = TEMPS_POSES.sample
+photo_unsplash.sensibilite = SENSIBILITES.sample
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
@@ -207,6 +247,11 @@ img_url = 'https://images.unsplash.com/photo-1562457753-6867bda028cd?ixlib=rb-1.
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = paul
+photo_unsplash.boitier = BOITIERS.sample
+photo_unsplash.objectif = OBJECTIFS.sample
+photo_unsplash.ouverture = OUVERTURES.sample
+photo_unsplash.temps_pose = TEMPS_POSES.sample
+photo_unsplash.sensibilite = SENSIBILITES.sample
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
@@ -220,6 +265,11 @@ img_url = 'https://images.unsplash.com/photo-1594675610570-c0fdddad6167?ixlib=rb
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = paul
+photo_unsplash.boitier = BOITIERS.sample
+photo_unsplash.objectif = OBJECTIFS.sample
+photo_unsplash.ouverture = OUVERTURES.sample
+photo_unsplash.temps_pose = TEMPS_POSES.sample
+photo_unsplash.sensibilite = SENSIBILITES.sample
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
@@ -237,6 +287,11 @@ img_url = 'https://images.unsplash.com/photo-1536896407451-6e3dd976edd1?ixlib=rb
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = paul
+photo_unsplash.boitier = BOITIERS.sample
+photo_unsplash.objectif = OBJECTIFS.sample
+photo_unsplash.ouverture = OUVERTURES.sample
+photo_unsplash.temps_pose = TEMPS_POSES.sample
+photo_unsplash.sensibilite = SENSIBILITES.sample
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
@@ -250,6 +305,11 @@ img_url = 'https://images.unsplash.com/photo-1552113125-81af17f36b57?ixlib=rb-1.
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = paul
+photo_unsplash.boitier = BOITIERS.sample
+photo_unsplash.objectif = OBJECTIFS.sample
+photo_unsplash.ouverture = OUVERTURES.sample
+photo_unsplash.temps_pose = TEMPS_POSES.sample
+photo_unsplash.sensibilite = SENSIBILITES.sample
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
@@ -264,6 +324,11 @@ img_url = 'https://images.unsplash.com/photo-1441886367417-1c946b32a980?ixlib=rb
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = paul
+photo_unsplash.boitier = BOITIERS.sample
+photo_unsplash.objectif = OBJECTIFS.sample
+photo_unsplash.ouverture = OUVERTURES.sample
+photo_unsplash.temps_pose = TEMPS_POSES.sample
+photo_unsplash.sensibilite = SENSIBILITES.sample
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
@@ -277,6 +342,11 @@ img_url = 'https://images.unsplash.com/photo-1651097681179-c64917595ff2?ixlib=rb
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = paul
+photo_unsplash.boitier = BOITIERS.sample
+photo_unsplash.objectif = OBJECTIFS.sample
+photo_unsplash.ouverture = OUVERTURES.sample
+photo_unsplash.temps_pose = TEMPS_POSES.sample
+photo_unsplash.sensibilite = SENSIBILITES.sample
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
@@ -294,6 +364,11 @@ img_url = 'https://images.unsplash.com/photo-1542513217-0b0eedf7005d?ixlib=rb-1.
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = paul
+photo_unsplash.boitier = BOITIERS.sample
+photo_unsplash.objectif = OBJECTIFS.sample
+photo_unsplash.ouverture = OUVERTURES.sample
+photo_unsplash.temps_pose = TEMPS_POSES.sample
+photo_unsplash.sensibilite = SENSIBILITES.sample
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
@@ -307,6 +382,11 @@ img_url = 'https://images.unsplash.com/photo-1514218698632-ef079aeae842?ixlib=rb
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = paul
+photo_unsplash.boitier = BOITIERS.sample
+photo_unsplash.objectif = OBJECTIFS.sample
+photo_unsplash.ouverture = OUVERTURES.sample
+photo_unsplash.temps_pose = TEMPS_POSES.sample
+photo_unsplash.sensibilite = SENSIBILITES.sample
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
@@ -324,6 +404,11 @@ img_url = 'https://images.unsplash.com/photo-1493106819501-66d381c466f1?ixlib=rb
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = paul
+photo_unsplash.boitier = BOITIERS.sample
+photo_unsplash.objectif = OBJECTIFS.sample
+photo_unsplash.ouverture = OUVERTURES.sample
+photo_unsplash.temps_pose = TEMPS_POSES.sample
+photo_unsplash.sensibilite = SENSIBILITES.sample
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
@@ -336,6 +421,11 @@ img_url = 'https://images.unsplash.com/photo-1504199367641-aba8151af406?ixlib=rb
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = paul
+photo_unsplash.boitier = BOITIERS.sample
+photo_unsplash.objectif = OBJECTIFS.sample
+photo_unsplash.ouverture = OUVERTURES.sample
+photo_unsplash.temps_pose = TEMPS_POSES.sample
+photo_unsplash.sensibilite = SENSIBILITES.sample
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
@@ -349,6 +439,11 @@ img_url = 'https://images.unsplash.com/photo-1617298670466-d4228178f0b7?ixlib=rb
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = paul
+photo_unsplash.boitier = BOITIERS.sample
+photo_unsplash.objectif = OBJECTIFS.sample
+photo_unsplash.ouverture = OUVERTURES.sample
+photo_unsplash.temps_pose = TEMPS_POSES.sample
+photo_unsplash.sensibilite = SENSIBILITES.sample
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
@@ -361,6 +456,11 @@ img_url = 'https://images.unsplash.com/photo-1530785602389-07594beb8b73?ixlib=rb
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = paul
+photo_unsplash.boitier = BOITIERS.sample
+photo_unsplash.objectif = OBJECTIFS.sample
+photo_unsplash.ouverture = OUVERTURES.sample
+photo_unsplash.temps_pose = TEMPS_POSES.sample
+photo_unsplash.sensibilite = SENSIBILITES.sample
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
@@ -374,6 +474,11 @@ img_url = 'https://images.unsplash.com/photo-1587397845856-e6cf49176c70?ixlib=rb
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = paul
+photo_unsplash.boitier = BOITIERS.sample
+photo_unsplash.objectif = OBJECTIFS.sample
+photo_unsplash.ouverture = OUVERTURES.sample
+photo_unsplash.temps_pose = TEMPS_POSES.sample
+photo_unsplash.sensibilite = SENSIBILITES.sample
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
@@ -387,6 +492,11 @@ img_url = 'https://images.unsplash.com/photo-1506863530036-1efeddceb993?ixlib=rb
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = paul
+photo_unsplash.boitier = BOITIERS.sample
+photo_unsplash.objectif = OBJECTIFS.sample
+photo_unsplash.ouverture = OUVERTURES.sample
+photo_unsplash.temps_pose = TEMPS_POSES.sample
+photo_unsplash.sensibilite = SENSIBILITES.sample
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
@@ -403,6 +513,11 @@ img_url = 'https://images.unsplash.com/photo-1520584229410-24ebf86ad31c?ixlib=rb
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = paul
+photo_unsplash.boitier = BOITIERS.sample
+photo_unsplash.objectif = OBJECTIFS.sample
+photo_unsplash.ouverture = OUVERTURES.sample
+photo_unsplash.temps_pose = TEMPS_POSES.sample
+photo_unsplash.sensibilite = SENSIBILITES.sample
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
@@ -415,6 +530,11 @@ img_url = 'https://images.unsplash.com/photo-1592576543332-120a87723830?ixlib=rb
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = paul
+photo_unsplash.boitier = BOITIERS.sample
+photo_unsplash.objectif = OBJECTIFS.sample
+photo_unsplash.ouverture = OUVERTURES.sample
+photo_unsplash.temps_pose = TEMPS_POSES.sample
+photo_unsplash.sensibilite = SENSIBILITES.sample
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
@@ -428,6 +548,11 @@ img_url = 'https://images.unsplash.com/photo-1504904488824-dbeda3cb530b?ixlib=rb
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = paul
+photo_unsplash.boitier = BOITIERS.sample
+photo_unsplash.objectif = OBJECTIFS.sample
+photo_unsplash.ouverture = OUVERTURES.sample
+photo_unsplash.temps_pose = TEMPS_POSES.sample
+photo_unsplash.sensibilite = SENSIBILITES.sample
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
@@ -446,6 +571,11 @@ img_url = 'https://images.unsplash.com/photo-1511933617088-859b414f00ae?ixlib=rb
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = paul
+photo_unsplash.boitier = BOITIERS.sample
+photo_unsplash.objectif = OBJECTIFS.sample
+photo_unsplash.ouverture = OUVERTURES.sample
+photo_unsplash.temps_pose = TEMPS_POSES.sample
+photo_unsplash.sensibilite = SENSIBILITES.sample
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
@@ -462,6 +592,11 @@ puts "Creating photo..."
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = paul
+photo_unsplash.boitier = BOITIERS.sample
+photo_unsplash.objectif = OBJECTIFS.sample
+photo_unsplash.ouverture = OUVERTURES.sample
+photo_unsplash.temps_pose = TEMPS_POSES.sample
+photo_unsplash.sensibilite = SENSIBILITES.sample
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
@@ -475,6 +610,11 @@ img_url = 'https://images.unsplash.com/photo-1529690352690-1a85af03cc98?ixlib=rb
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = paul
+photo_unsplash.boitier = BOITIERS.sample
+photo_unsplash.objectif = OBJECTIFS.sample
+photo_unsplash.ouverture = OUVERTURES.sample
+photo_unsplash.temps_pose = TEMPS_POSES.sample
+photo_unsplash.sensibilite = SENSIBILITES.sample
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
@@ -492,6 +632,11 @@ img_url = 'https://images.unsplash.com/photo-1539614474468-f423a2d2270c?ixlib=rb
 file = URI.open(img_url)
 photo_unsplash.photo.attach(io: file, filename: "#{photo_unsplash.id}.jpg", content_type: 'image/jpg')
 photo_unsplash.user = paul
+photo_unsplash.boitier = BOITIERS.sample
+photo_unsplash.objectif = OBJECTIFS.sample
+photo_unsplash.ouverture = OUVERTURES.sample
+photo_unsplash.temps_pose = TEMPS_POSES.sample
+photo_unsplash.sensibilite = SENSIBILITES.sample
 photo_unsplash.save!
 photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
@@ -2454,3 +2599,109 @@ photo_unsplash_category = PhotoCategory.new
 photo_unsplash_category.picture = photo_unsplash
 photo_unsplash_category.category = architecture
 photo_unsplash_category.save!
+
+# COLLABORATIONS SEEDS
+collab = Collaboration.new(name: 'Breathe', artist1: paul, artist2: aicha, status: 1)
+collab.save!
+
+photo_collab = Picture.new
+photo_collab.collaboration = collab
+puts "Creating photo..."
+img_url = 'https://images.unsplash.com/photo-1505312904023-e4c5d6fcfa4a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1776&q=80'
+file = URI.open(img_url)
+photo_collab.photo.attach(io: file, filename: "#{photo_collab.id}.jpg", content_type: 'image/jpg')
+photo_collab.user = paul
+photo_collab.save!
+photo_collab_category = PhotoCategory.new
+photo_collab_category.picture = photo_collab
+photo_collab_category.category = portrait
+photo_collab_category.save!
+photo_collab_category = PhotoCategory.new
+photo_collab_category.picture = photo_collab
+photo_collab_category.category = forest
+photo_collab_category.save!
+
+photo_collab = Picture.new
+photo_collab.collaboration = collab
+puts "Creating photo..."
+img_url = 'https://images.unsplash.com/photo-1638148870156-b67e32b90938?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
+file = URI.open(img_url)
+photo_collab.photo.attach(io: file, filename: "#{photo_collab.id}.jpg", content_type: 'image/jpg')
+photo_collab.user = paul
+photo_collab.save!
+photo_collab_category = PhotoCategory.new
+photo_collab_category.picture = photo_collab
+photo_collab_category.category = portrait
+photo_collab_category.save!
+photo_collab_category = PhotoCategory.new
+photo_collab_category.picture = photo_collab
+photo_collab_category.category = forest
+photo_collab_category.save!
+
+photo_collab = Picture.new
+photo_collab.collaboration = collab
+puts "Creating photo..."
+img_url = 'https://images.unsplash.com/photo-1541216970279-affbfdd55aa8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
+file = URI.open(img_url)
+photo_collab.photo.attach(io: file, filename: "#{photo_collab.id}.jpg", content_type: 'image/jpg')
+photo_collab.user = paul
+photo_collab.save!
+photo_collab_category = PhotoCategory.new
+photo_collab_category.picture = photo_collab
+photo_collab_category.category = portrait
+photo_collab_category.save!
+photo_collab_category = PhotoCategory.new
+photo_collab_category.picture = photo_collab
+photo_collab_category.category = forest
+photo_collab_category.save!
+
+photo_collab = Picture.new
+photo_collab.collaboration = collab
+puts "Creating photo..."
+img_url = 'https://images.unsplash.com/photo-1492581654245-5a258fbbecce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=466&q=80'
+file = URI.open(img_url)
+photo_collab.photo.attach(io: file, filename: "#{photo_collab.id}.jpg", content_type: 'image/jpg')
+photo_collab.user = paul
+photo_collab.save!
+photo_collab_category = PhotoCategory.new
+photo_collab_category.picture = photo_collab
+photo_collab_category.category = portrait
+photo_collab_category.save!
+photo_collab_category = PhotoCategory.new
+photo_collab_category.picture = photo_collab
+photo_collab_category.category = forest
+photo_collab_category.save!
+
+photo_collab = Picture.new
+photo_collab.collaboration = collab
+puts "Creating photo..."
+img_url = 'https://images.unsplash.com/photo-1633116182263-d47d11023c9c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
+file = URI.open(img_url)
+photo_collab.photo.attach(io: file, filename: "#{photo_collab.id}.jpg", content_type: 'image/jpg')
+photo_collab.user = paul
+photo_collab.save!
+photo_collab_category = PhotoCategory.new
+photo_collab_category.picture = photo_collab
+photo_collab_category.category = portrait
+photo_collab_category.save!
+photo_collab_category = PhotoCategory.new
+photo_collab_category.picture = photo_collab
+photo_collab_category.category = forest
+photo_collab_category.save!
+
+photo_collab = Picture.new
+photo_collab.collaboration = collab
+puts "Creating photo..."
+img_url = 'https://images.unsplash.com/photo-1614199484820-909ad394894d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
+file = URI.open(img_url)
+photo_collab.photo.attach(io: file, filename: "#{photo_collab.id}.jpg", content_type: 'image/jpg')
+photo_collab.user = paul
+photo_collab.save!
+photo_collab_category = PhotoCategory.new
+photo_collab_category.picture = photo_collab
+photo_collab_category.category = portrait
+photo_collab_category.save!
+photo_collab_category = PhotoCategory.new
+photo_collab_category.picture = photo_collab
+photo_collab_category.category = forest
+photo_collab_category.save!
