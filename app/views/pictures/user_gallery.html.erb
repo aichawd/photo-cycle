@@ -1,32 +1,28 @@
-<head>
-  <link rel="stylesheet" href="user_gallery.scss">
-</head>
-
 <div class='user-banner' style="background-image: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1550895030-823330fc2551?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80)">
   <div class="banner-container">
     <h1 style="margin-bottom: 0px;">
       <% if @user.photo.attached? %>
-                <%= cl_image_tag @user.photo.key, class: "avatar-large"%>
+        <%= cl_image_tag @user.photo.key, class: "avatar-large" %>
       <% end %>
       <%= @user.first_name %> <%= @user.last_name %>
-          <button type="button" class="collab-btn" data-bs-toggle="modal" data-bs-target="#collabModal">
-            Collaborate →
-          </button>
+      <button type="button" class="collab-btn" data-bs-toggle="modal" data-bs-target="#collabModal">
+        Collaborate →
+      </button>
     </h1>
 
     <h3>Bio: artichette, tichette de 2, tichette de 3, tichette de 21, michette, <br> tchiledeque, mique,sganabadarlane, résiné et raitournelle..</h3>
     <p>
-        <%= @user_pictures.count %> masterpieces
-        Matériel: Kidizoom 🥲
+      <%= @user_pictures.count %> masterpieces
+      Matériel: Kidizoom 🥲
     </p>
-        <% if @user == current_user %>
-    <h3 class="tags" style="margin-bottom: 10px;">My Tags: </h3>
-          <button type="button" class="contact-btn" data-bs-toggle="modal" data-bs-target="#newPhotoModal">
-            Add photo
-          </button>
-        <% else %>
-          <%= link_to 'Contact', chatroom_path(@single_chatroom), class: "contact-btn" %>
-        <% end %>
+    <% if @user == current_user %>
+      <h3 class="tags" style="margin-bottom: 10px;">My Tags: </h3>
+      <button type="button" class="contact-btn" data-bs-toggle="modal" data-bs-target="#newPhotoModal">
+        Add photo
+      </button>
+    <% else %>
+      <%= link_to 'Contact', chatroom_path(@single_chatroom), class: "contact-btn" %>
+    <% end %>
   </div>
 </div>
 
