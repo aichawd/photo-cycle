@@ -7,6 +7,7 @@ export default class extends Controller {
 
   connect() {
     console.log("hello")
+    this.scrollDown()
     this.channel = consumer.subscriptions.create(
       { channel: "ChatroomChannel", id: this.chatroomIdValue },
       { received: data => this.processMessage(data) }
@@ -52,7 +53,7 @@ export default class extends Controller {
       }
       /* scrollDown() {
       this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight)
-      } */ 
+      } */
 
 
 }

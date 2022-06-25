@@ -1,27 +1,30 @@
-<div class='user-banner container'>
-    <h1>
-        <% if @artist1.photo.attached? %>
-          <%= cl_image_tag @artist1.photo.key, class: "avatar"%>
+<div class='user-banner collab-show-banner mb-2' style="background-image: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1533134486753-c833f0ed4866?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80)">
+  <div class="banner-container">
+    <h1 style="margin-bottom: 0px;">
+        <%= link_to gallery_path(@artist1.username), class: "collab-artist" do %>
+          <%= cl_image_tag @artist1.photo.key, class: 'avatar-large' %>
         <% end %>
-          <% if @artist2.photo.attached? %>
-          <%= cl_image_tag @artist2.photo.key, class: "avatar"%>
+        <%= link_to gallery_path(@artist2.username), class: "collab-artist" do %>
+          <%= cl_image_tag @artist2.photo.key, class: 'avatar-large' %>
         <% end %>
-      <%= @collab.name %>
+      <%= @artist1.first_name %> <%= @artist1.last_name %> X <%= @artist2.first_name %> <%= @artist2.last_name %>
     </h1>
-    <h2> <%= @artist1.username %> x <%= @artist2.username %></h2>
-    <p>This is a collab' description</p>
-    <ol>
-      <li><%= @collab_pictures.count %> masterpieces</li>
-      <% if current_user == @artist1 || current_user == @artist2 %>
-        <li>
-          <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#newPhotoModal">
-            Add photo
-          </button>
-        </li>
-      <% end %>
-      <li>Matériel: Kidizoom 🥲</li>
-    </ol>
-    <p class="tags">Collab Tags: </p>
+
+    <h2>
+      <%= @collab.name %>
+    </h2>
+
+    <h3>This is a beautiful collaboration description that doesn't exist yet but that will be put in the seeds later</h3>
+    <p>
+      <%= @collab_pictures.count %> photos
+    </p>
+    <h3 class="tags" style="margin-bottom: 10px;">My Tags: </h3>
+    <% if @artist1 == current_user || @artist2 == current_user %>
+      <button type="button" class="contact-btn" data-bs-toggle="modal" data-bs-target="#newPhotoModal">
+        Add photo
+      </button>
+    <% end %>
+  </div>
 </div>
 
 <div class="photo-feed-behavior">

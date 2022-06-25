@@ -1,5 +1,6 @@
 @import "user_feed";
 
+// COLLABORATIONS INDEX PAGE
 .collab-banner {
   background-position: center;
   padding: 150px 0;
@@ -103,5 +104,17 @@
   .cancel-request {
     font-size: 12px;
     color: grey;
+  }
+}
+
+// COLLABORATION SHOW PAGE
+
+.collab-artist {
+  text-decoration: none;
+}
+
+.collab-show-banner {
+  h2 {
+    color: white;
   }
 }

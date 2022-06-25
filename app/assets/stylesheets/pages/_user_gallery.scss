@@ -67,7 +67,10 @@
   }
 }
 
-
+#nav-tab {
+  margin-left: 150px;
+  margin-right: 150px;
+}
 
 //SEPARATOR
 
@@ -167,6 +170,11 @@
       visibility:hidden;
       z-index: 10;
     }
+
+    .collab-name{
+      visibility:hidden;
+      z-index: 10;
+    }
   }
 
   li:hover {
@@ -175,8 +183,18 @@
       z-index: 10;
     }
 
-  .dropdown-item {
-    z-index: 10;
+    .dropdown-item {
+      z-index: 10;
+      }
+
+    .collab-name{
+      visibility: visible;
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      color: white;
+      font-size: 12px;
+      text-decoration: none;
     }
   }
 

@@ -11,6 +11,15 @@ class PicturesController < ApplicationController
     @message= Message.new
     @messages = @single_chatroom.messages.order(created_at: :asc) if @single_chatroom
     @user_pictures = Picture.where(user: @user).where(collaboration_id: nil)
+    @user_categories = []
+    @user_pictures.each do |pic|
+      pic.categories.each do |category|
+        @user_categories.push(category.name)
+      end
+    end
+    @user_categories.uniq!
+    user_collabs = Collaboration.where(["artist1_id = ? or artist2_id = ?", @user.id, @user.id]).where(status: 1)
+    @user_collab_pictures = Picture.where(collaboration: user_collabs)
     # defining a picture variable for the 'Add photo' modal
     @picture = Picture.new
     # defining a collab variable for the 'Propose collab' modal
