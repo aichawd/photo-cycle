@@ -1,2 +1,18 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+
+<div class="home-container">
+  <div class="gallery container" data-controller="grid">
+    <% @pictures.shuffle.each do |pic| %>
+      <div class="home-img masonry-element">
+        <%= cl_image_tag pic.photo.key, style: 'height: 100%;' %>
+      </div>
+    <% end %>
+  </div>
+  <div class="overlay">
+    <div>
+      <h3>Partager et collaborer avec</h3>
+      <h1>+10 000 photographes</h1>
+      <%= link_to 'Commencer gratuitement', feed_path, class: 'home-btn' %>
+    </div>
+  </div>
+</div>

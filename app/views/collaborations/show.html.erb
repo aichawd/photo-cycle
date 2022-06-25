@@ -30,7 +30,7 @@
 <div class="photo-feed-behavior">
   <ul data-search-target="picturesContainer" data-controller="grid">
       <% @collab_pictures.each do |pic| %>
-      <div class="card-category">
+      <div class="card-category masonry-element">
         <%= cl_image_tag pic.photo.key, style: 'height: 100%;' %>
       </div>
     <% end %>

@@ -6,7 +6,7 @@ export default class extends Controller {
   connect() {
     var msnry = new Masonry( this.element, {
       // options...
-      itemSelector: '.card-category',
+      itemSelector: '.masonry-element',
       columnWidth: 200
     });
   }
