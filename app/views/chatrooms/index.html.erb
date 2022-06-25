@@ -12,10 +12,12 @@
             <p class="interlocutor"><%= chatroom.interlocutor(current_user).username %></p>
             </div>
             <p class="chatroom_message">
+              <% if chatroom.messages.last %>
                 <%= chatroom.messages.last.content.truncate(70) %>
+              <% end %>
             </p>
           </li>
-        
+
         <% end %>
       </ul>
 
