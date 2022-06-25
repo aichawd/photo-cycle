@@ -5,6 +5,8 @@ PhotoCategory.destroy_all
 Picture.destroy_all
 Category.destroy_all
 User.destroy_all
+Message.destroy_all
+Chatroom.destroy_all
 
 BOITIERS = ["Sony A7 IV", "Fujifilm X-T4", "Canon EOS R6", "OM System OM-1", "Nikon Z6 II", "Fujifilm X-S10", "Nikon Z fc", "Canon EOS R5", "Fujifilm X100V", "Canon EOS R3"]
 OBJECTIFS = ["11-24mm", "15-45mm", "28-75mm", "50mm", "18-135mm", "50-140mm", "55-250mm", "70-200mm", "100mm", "100-300mm"]
