@@ -6,9 +6,11 @@
           <%= cl_image_tag @user.photo.key, class: "avatar-large" %>
         <% end %>
         <%= @user.first_name %> <%= @user.last_name %>
-        <button type="button" class="collab-btn" data-bs-toggle="modal" data-bs-target="#collabModal">
-          Collaborate →
-        </button>
+        <% if @user != current_user %>
+          <button type="button" class="collab-btn" data-bs-toggle="modal" data-bs-target="#collabModal">
+            Collaborate →
+          </button>
+        <% end %>
       </h1>
 
       <h3>Bio: artichette, tichette de 2, tichette de 3, tichette de 21, michette, <br> tchiledeque, mique,sganabadarlane, résiné et raitournelle..</h3>
