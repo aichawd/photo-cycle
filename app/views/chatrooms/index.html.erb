@@ -3,8 +3,8 @@
 
     <div id="user_list" class="user_list">
       <ul>
-        <% @chatrooms.each do |chatroom| %>
-          <li class="chatroom_card" data-action="click->chatrooms#show" data-url="<%= chatroom_path(chatroom) %>">
+        <% @chatrooms.sort_by(&:updated_at).reverse.each do |chatroom| %>
+          <li class="chatroom_card" data-action="click->chatrooms#show" data-url="<%= chatroom_path(chatroom) %>" data-chatrooms-target="chatroomCard">
             <div class="d-flex align-items-center">
             <%= link_to gallery_path(chatroom.interlocutor(current_user).username) do %>
               <%= cl_image_tag chatroom.interlocutor(current_user).photo.key, class: "avatar mx-2", class: "chatroom-avatar"%>

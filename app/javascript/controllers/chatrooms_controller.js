@@ -1,7 +1,10 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = [ "chatroomContainer", 'scrollableMessages' ]
+  static targets = [ "chatroomContainer", 'scrollableMessages', 'chatroomCard' ]
+  connect() {
+    this.chatroomCardTargets[0].click()
+  }
 
   show(event) {
     const url = event.currentTarget.dataset.url

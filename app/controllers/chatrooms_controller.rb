@@ -4,7 +4,6 @@ class ChatroomsController < ApplicationController
   def index
     #@chatroom = Chatroom.new
     @chatrooms = current_user.chatrooms
-
     #@users = User.where.not(id: current_user.id)
     render 'index'
   end
