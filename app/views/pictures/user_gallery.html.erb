@@ -18,7 +18,7 @@
         <%= @user_pictures.count %> photos
       </p>
       <p class="tags">
-        <span class="badge rounded-pill bg-light text-dark mx-1"
+        <span class="badge rounded-pill bg-light text-dark mr-1"
               data-user-search-target="tag"
               data-action="click->user-search#all">
           All
@@ -46,7 +46,7 @@
 
   <%= render 'modals' %>
 
-  <nav>
+  <nav id="nav-gallery">
     <div class="nav nav-tabs" id="nav-tab" role="tablist">
       <button class="nav-link active" id="nav-main-tab" data-bs-toggle="tab" data-bs-target="#nav-main" type="button" role="tab" aria-controls="nav-main" aria-selected="true">Personal gallery</button>
       <button class="nav-link" id="nav-collabs-tab" data-bs-toggle="tab" data-bs-target="#nav-collabs" type="button" role="tab" aria-controls="nav-collabs" aria-selected="false">Collabs</button>

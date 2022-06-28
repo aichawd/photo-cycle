@@ -65,6 +65,11 @@
     flex-wrap: wrap;
     align-content: center;
   }
+
+  .tags {
+    cursor: pointer;
+    font-size: 16px;
+  }
 }
 
 #nav-tab {
@@ -155,11 +160,18 @@
   }
 }
 
+// GALLERY TABS
+#nav-gallery {
+  .nav-link {
+    color: rgba(0, 0, 0, 0.55);
+  }
 
-// test full screen mode onclick
+  .nav-link.active {
+    color: black;
+  }
+}
 
-
-
+// GALLERY PICTURES
 
 .photo-behavior {
 
