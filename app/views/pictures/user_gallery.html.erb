@@ -61,7 +61,9 @@
           <% @user_pictures.each do |pic| %>
             <li data-user-search-target="image"
                 data-categories="<%= pic.categories.map(&:name).join(' ') %>">
-              <a data-action="click->view-photo#view">
+              <a data-action="click->view-photo#view" data-boitier="<%= pic.boitier %>"
+                      data-objectif="<%= pic.objectif %>" data-ouverture="<%= pic.ouverture %>"
+                      data-tempspose="<%= pic.temps_pose %>" data-sensibilite="ISO <%= pic.sensibilite %>">
                 <%= cl_image_tag pic.photo.key %>
               </a>
               <% if @user == current_user %>
@@ -82,11 +84,9 @@
               <div id="gallery_modal" class="modal" data-controller="modal" data-view-photo-target="modal">
                 <div class="modal-dialog">
                     <div id="gallery_modal_content" class="modal-content">
-                      <a class="link-secondary" data-action="click->modal#close">Close</a>
-                      <div data-modal-target="photo">
+                      <p class="text-right"><a class="close-btn" data-action="click->modal#close">X</a></p>
+                      <div class="photo-modal" data-modal-target="photo">
                       </div>
-                      <p class="mx-3"><%= pic.boitier %> <%= pic.objectif %></p>
-                      <p class="mx-3"><%= pic.ouverture %> <%= pic.temps_pose %> ISO<%= pic.sensibilite %></p>
                     </div>
                 </div>
               </div>
