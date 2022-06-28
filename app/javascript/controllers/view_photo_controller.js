@@ -7,7 +7,6 @@ export default class extends Controller {
         this.modalTarget,
         "modal"
     );
-    console.log(event.currentTarget.innerHTML);
     modalController.setPhotoContent(event);
     modalController.open();
   }

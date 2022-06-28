@@ -5,6 +5,16 @@ export default class extends Controller {
 
   setPhotoContent(event) {
     this.photoTarget.innerHTML = event.currentTarget.innerHTML;
+    const boitier = event.currentTarget.dataset.boitier;
+    const objectif = event.currentTarget.dataset.objectif;
+    const ouverture = event.currentTarget.dataset.ouverture;
+    const tempspose = event.currentTarget.dataset.tempspose;
+    const sensibilite = event.currentTarget.dataset.sensibilite;
+    const techDetails = `<div> <i class="fas fa-camera-retro"></i> ${boitier}
+                          <i class="fas fa-dot-circle"></i>${objectif} </div>
+                        <div><i class="fas fa-bullseye"></i><i class="fab fa-first-order-alt"></i>${ouverture}
+                        ${tempspose} ${sensibilite}</div>`
+    this.photoTarget.insertAdjacentHTML("beforeend", techDetails)
   }
 
   open() {
