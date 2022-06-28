@@ -4,12 +4,45 @@
   width: 100vw;
   overflow: hidden;
   background-color: black;
+
+  .home-gallery-container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  @media (min-width: 576px) {
+    home-gallery-container {
+      max-width: calc(576px - 10rem);
+    }
+  }
+  @media (min-width: 768px) {
+    home-gallery-container {
+      max-width: calc(768px - 10rem);
+    }
+  }
+  @media (min-width: 992px) {
+    home-gallery-container {
+      max-width: calc(992px - 10rem);
+    }
+  }
+  @media (min-width: 1200px) {
+    home-gallery-container {
+      max-width: calc(1200px - 10rem);
+    }
+  }
+  @media (min-width: 1400px) {
+    home-gallery-container {
+      max-width: calc(1400px - 10rem);
+    }
+  }
+
   .gallery {
     overflow: hidden;
     position: absolute;
     inset: 0;
     z-index: 0;
-    margin: 10rem auto;
+    margin: 5rem auto;
     &> ul {
       max-height: 45vh;
       list-style-type: none;
