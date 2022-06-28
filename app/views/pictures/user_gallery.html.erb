@@ -1,16 +1,11 @@
 <div data-controller="user-search">
-  <div class='user-banner mb-2' style="background-image: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1550895030-823330fc2551?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80)">
+  <div class='user-banner mb-2' style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.5)), url(https://images.unsplash.com/photo-1571085441274-292fd836e1fd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1728&q=80)">
     <div class="banner-container">
       <h1 style="margin-bottom: 0px;">
         <% if @user.photo.attached? %>
           <%= cl_image_tag @user.photo.key, class: "avatar-large" %>
         <% end %>
         <%= @user.first_name %> <%= @user.last_name %>
-        <% if @user != current_user %>
-          <button type="button" class="collab-btn" data-bs-toggle="modal" data-bs-target="#collabModal">
-            Collaborate →
-          </button>
-        <% end %>
       </h1>
 
       <h3>Bio: artichette, tichette de 2, tichette de 3, tichette de 21, michette, <br> tchiledeque, mique,sganabadarlane, résiné et raitournelle..</h3>
@@ -18,14 +13,14 @@
         <%= @user_pictures.count %> photos
       </p>
       <p class="tags">
-        <span class="badge rounded-pill bg-light text-dark mr-1"
+        <span class="add-photo-btn-tags"
               data-user-search-target="tag"
               data-action="click->user-search#all">
           All
         </span>
 
         <% @user_categories.each do |cat_name| %>
-          <span class="badge rounded-pill bg-light text-dark mx-1"
+          <span class="add-photo-btn-tags"
                 data-user-search-target="tag"
                 data-tag-name="<%= cat_name %>"
                 data-action="click->user-search#filter">
@@ -33,15 +28,22 @@
           </span>
         <% end %>
       </p>
-
+    <div class="d-flex" style="margin-left: 78px">
+      <% if @user != current_user %>
+        <button type="button" class="add-photo-btn-user-collab" data-bs-toggle="modal" data-bs-target="#collabModal">
+          Collaborate →
+        </button>
+        <% end %>
       <% if @user == current_user %>
-        <button type="button" class="contact-btn" data-bs-toggle="modal" data-bs-target="#newPhotoModal">
-          Add photo
+        <button type="button" class="add-photo-btn-user" data-bs-toggle="modal" data-bs-target="#newPhotoModal">
+          +Add photo
         </button>
       <% else %>
-        <%= link_to 'Contact', chatroom_path(@single_chatroom), class: "contact-btn" %>
+        <%= link_to 'Contact', chatroom_path(@single_chatroom), class: "add-photo-btn-user" %>
       <% end %>
     </div>
+    </div>
+
   </div>
 
   <%= render 'modals' %>
