@@ -115,6 +115,17 @@
   margin-right: 150px;
 }
 
+#nav-gallery {
+  .nav-link {
+    color: grey;
+    text-decoration: none;
+  }
+
+  .nav-link.active {
+    color: black;
+  }
+}
+
 //SEPARATOR
 
 .photo-behavior {
@@ -251,29 +262,5 @@
   .fa-edit {
     font-size: 20px;
     color: white;
-  }
-}
-
-// PHOTO MODAL
-
-.modal-content {
-
-  background-color: black;
-
-  .close-btn  {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-  }
-
-  .photo-modal {
-    background-color: black;
-    color: white;
-
-    img {
-    max-height: 75vh;
-    max-width: 80vw;
-    }
   }
 }

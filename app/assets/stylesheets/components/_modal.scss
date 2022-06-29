@@ -1,11 +1,40 @@
 #gallery_modal {
   width: 100%; /* Full width */
   height: 100%; /* Full height */
-  background-color: rgb(0,0,0); /* Black w/ opacity */
+  background-color: rgba(0,0,0,0.9); /* Black */
 }
 
-#gallery_modal_content {
+// PHOTO MODAL
+
+.modal-content {
+
+  background-color: rgba(0,0,0,0.8);
   width: fit-content;
-  margin: 0 auto;
-  display: block;
+
+  .close-btn  {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: end;
+  }
+
+  .photo-modal {
+    color: white;
+    background-color: rgba(0,0,0,0.8);
+
+    img {
+    max-height: 75vh;
+    max-width: 80vw;
+    transition: 0.3s;
+    }
+
+    .tech-details {
+
+      span {
+        margin: 0 8px;
+      }
+    }
+  }
 }
