@@ -236,6 +236,11 @@
       z-index: 10;
     }
 
+    .favourite {
+      visibility:hidden;
+      z-index: 10;
+    }
+
     .collab-name{
       visibility:hidden;
       z-index: 10;
@@ -246,6 +251,27 @@
     .dropdown {
       visibility:visible;
       z-index: 10;
+    }
+
+    .favourite {
+      visibility:visible;
+      z-index: 10;
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      height: auto;
+
+      .fa-heart {
+        font-size: 20px;
+        color: grey;
+        transition: ease-out 0.1s;
+      }
+
+      .red {
+        font-size: 20px;
+        color: red;
+        transition: ease-in 0.1s;
+      }
     }
 
     .dropdown-item {
@@ -268,6 +294,11 @@
     top: 12px;
     right: 12px;
     height: auto;
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
   }
 
   .fa-edit {

@@ -70,6 +70,7 @@
                       data-tempspose="<%= pic.temps_pose %>" data-sensibilite="ISO <%= pic.sensibilite %>">
                 <%= cl_image_tag pic.photo.key %>
               </a>
+
               <% if @user == current_user %>
                 <div class="dropdown">
                   <a  type="button" class="dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -85,6 +86,14 @@
                   </div>
                 </div>
               <% end %>
+
+              <% if @user != current_user %>
+                <div class="favourite" data-controller="add-fav">
+                  <i class="fas fa-heart" data-add-fav-target="heart"
+                   data-action="click->add-fav#like"></i>
+                </div>
+              <% end %>
+
               <div id="gallery_modal" class="modal" data-controller="modal" data-view-photo-target="modal">
                 <div class="modal-dialog">
                     <div id="gallery_modal_content" class="modal-content">
