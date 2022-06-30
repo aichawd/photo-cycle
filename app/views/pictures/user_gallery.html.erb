@@ -7,13 +7,14 @@
         <% end %>
         <%= @user.first_name %> <%= @user.last_name %>
       </h1>
-
-      <h3>Bio: artichette, tichette de 2, tichette de 3, tichette de 21, michette, <br> tchiledeque, mique,sganabadarlane, résiné et raitournelle..</h3>
-      <div class="d-flex" style="margin-top: 10px;">
+      <h3>Bio: <%= @user.bio %></h3>
+      <p>
+        <%= @user_pictures.count %> photos
+      </p>
       <p class="tags">
-        <span class="add-photo-btn-tags"
+        <span class="add-photo-btn-tags selected"
               data-user-search-target="tag"
-              data-action="click->user-search#all">
+              data-action="click->user-search#allImages">
           All
         </span>
         <% @user_categories.each do |cat_name| %>
@@ -32,7 +33,7 @@
     <div class="d-flex" style="margin-left: 78px">
       <% if @user != current_user %>
         <button type="button" class="add-photo-btn-user-collab" data-bs-toggle="modal" data-bs-target="#collabModal">
-         Collaborate
+         Collaborate →
         </button>
         <% end %>
       <% if @user == current_user %>
@@ -40,7 +41,7 @@
           +Add photo
         </button>
       <% else %>
-        <%= link_to 'Contact', chatroom_path(@single_chatroom), class: "add-photo-btn-user" %>
+        <%= link_to 'Contact → ', chatroom_path(@single_chatroom), class: "add-photo-btn-user" %>
       <% end %>
     </div>
     </div>
@@ -87,7 +88,7 @@
               <div id="gallery_modal" class="modal" data-controller="modal" data-view-photo-target="modal">
                 <div class="modal-dialog">
                     <div id="gallery_modal_content" class="modal-content">
-                      <p class="text-right"><a class="close-btn" data-action="click->modal#close">X</a></p>
+                      <div class="close-btn"><a data-action="click->modal#close">X</a></div>
                       <div class="photo-modal" data-modal-target="photo">
                       </div>
                     </div>
