@@ -48,8 +48,14 @@
     flex-direction: row;
     display: inline-flex;
     margin-right: 5px;
-
   }
+
+  .selected {
+    color: black;
+    background-color: white;
+  }
+
+
   .add-photo-btn-user{
     padding: 8px 24px;
     cursor: pointer;
@@ -161,6 +167,10 @@
     padding: 8px;
     margin: 0px 0px 0px 0px;
     border-radius: 8px;
+  }
+
+  img:hover {
+    cursor: pointer;
   }
 
   // ADVANCED
