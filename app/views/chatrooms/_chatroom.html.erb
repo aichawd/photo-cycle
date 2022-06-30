@@ -6,6 +6,7 @@
        data-chatroom-subscription-target="scrollableMessages"
        style="    max-height: calc(100vh - 92px - 54px);">
        <div class="chatroom_header">
+          <%= cl_image_tag chatroom.interlocutor(current_user).photo.key, class: "avatar mx-2", class: "head-avatar"%>
         <h1><%= chatroom.interlocutor(current_user).username %></h1>
        </div>
 
