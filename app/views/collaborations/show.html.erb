@@ -1,4 +1,4 @@
-<div class='user-banner collab-show-banner mb-2' style="background-image: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1533134486753-c833f0ed4866?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80)">
+<div data-controller="user-search" class='user-banner collab-show-banner mb-2' style="background-image: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1533134486753-c833f0ed4866?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80)">
   <div class="banner-container">
     <div class="d-flex">
         <%= link_to gallery_path(@artist1.username), class: "collab-artist" do %>
@@ -11,28 +11,41 @@
           <h1><%= @artist1.first_name %> <%= @artist1.last_name %> X <%= @artist2.first_name %> <%= @artist2.last_name %></h1>
           <h2><%= @collab.name %></h2>
         </div>
-        <% if @artist1 == current_user || @artist2 == current_user %>
-          <button type="button" class="add-photo-btn text-end" data-bs-toggle="modal" data-bs-target="#newPhotoModal">
-            +Add photo
-          </button>
-        <% end %>
     </div>
 
 
     <div class="collab-details">
       <h3>This is a beautiful collaboration description that doesn't exist yet but that will be put in the seeds later</h3>
-      <p>
-        <%= @collab_pictures.count %> photos
+      <p class="tags">
+        <span class="add-photo-btn-tags selected"
+              data-user-search-target="tag"
+              data-action="click->user-search#allImages">
+          All
+        </span>
+        <% @collab_categories.each do |cat_name| %>
+          <span class="add-photo-btn-tags"
+                data-user-search-target="tag"
+                data-tag-name="<%= cat_name %>"
+                data-action="click->user-search#filter">
+            <%= cat_name %>
+          </span>
+        <% end %>
+        <span><%= @collab_pictures.count %> photos</span>
       </p>
-      <h3 class="tags" style="margin-bottom: 10px;">My Tags: </h3>
     </div>
+
+    <% if @artist1 == current_user || @artist2 == current_user %>
+      <button type="button" class="add-photo-btn-user" data-bs-toggle="modal" data-bs-target="#newPhotoModal">
+        +Add photo
+      </button>
+    <% end %>
   </div>
 </div>
 
 <div class="photo-feed-behavior">
   <ul data-search-target="picturesContainer" data-controller="grid">
       <% @collab_pictures.each do |pic| %>
-      <div class="card-category masonry-element">
+      <div class="card-category masonry-element" data-user-search-target="image">
         <%= cl_image_tag pic.photo.key, style: 'height: 100%;' %>
       </div>
     <% end %>

@@ -10,6 +10,9 @@
               <% end %>
             </div>
             <%= link_to collab.name, collaboration_path(collab), class: "collab-name h5 mx-2 my-1"%>
+            <div class="collab_pic_count">
+              <%= collab.pictures.count %> photos
+            </div>
           </div>
           <br>
 

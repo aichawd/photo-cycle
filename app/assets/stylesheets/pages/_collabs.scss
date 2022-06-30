@@ -57,6 +57,14 @@
   text-decoration: none;
   color: black;
    }
+
+  .collab_pic_count {
+    position: absolute;
+    top: 8px;
+    right: 20px;
+    text-decoration: none;
+    color: black;
+  }
 }
 
 
@@ -146,22 +154,46 @@
     }
   }
 
-  .add-photo-btn {
-    position: absolute;
-    right: 0;
-    height: 32px;
-    font-weight: 12px;
-    border-radius: 4px;
+  .add-photo-btn-user{
+    padding: 8px 24px;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: 'Syne', sans-serif;
+    position: relative;
+    font-size: 16px;
+    border-radius: 30px;
     margin-top: 8px;
+    color: white;
+    background-color: black;
+    border: 1px solid black;
+    letter-spacing: 1px;
+    flex-direction: row;
+    display: inline-flex;
+    margin-right: 10px;
+
+    &:hover {
+      color: black;
+      background-color: white;
+      border: 1px solid white;
+      transition: ease-in 0.3s;
+    }
+  }
+
+  .add-photo-btn-tags {
+    padding: 8px 15px;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: 'Syne', sans-serif;
+    position: relative;
+    font-size: 15px;
+    border-radius: 4px;
     color: white;
     background-color: transparent;
     border: 1px solid white;
-  }
-
-  .add-photo-btn:hover {
-    color: black;
-    background-color: white;
-    border: 1px solid white;
+    letter-spacing: 1px;
+    flex-direction: row;
+    display: inline-flex;
+    margin-right: 5px;
   }
 
   .collab-details {
