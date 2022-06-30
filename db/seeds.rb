@@ -2517,6 +2517,9 @@ end
 
 # COLLABORATIONS SEEDS
 collab = Collaboration.new(name: 'Breathe', artist1: paul, artist2: aicha, status: 1)
+collab.story = "How do you feel in the middle of trees? Peaceful, serene, and content.
+Through Breathe, Paul Portier and Aïcha Diagne merge their talents to remind us of the
+importance of reconnecting with greenery."
 collab.save!
 
 collab_pic = Picture.new
@@ -2625,6 +2628,9 @@ collab_pic_category.save!
 #collab Bruno X Kenza
 
 collab = Collaboration.new(name: 'Under the snow', artist1: bruno, artist2: kenza, status: 1)
+collab.story = "There aren't many things more magical than seeing snow covering beautiful architecture.
+                Bruno Le Lay and Kenza Tighrine transport us to a world of fantasy through the capture
+                of this enchanting meeting."
 collab.save!
 
 collab_pic = Picture.new

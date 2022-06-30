@@ -30,6 +30,13 @@ class CollaborationsController < ApplicationController
     @collab_pictures = Picture.where(collaboration_id: @collab.id)
     @artist1 = User.find(@collab.artist1_id)
     @artist2 = User.find(@collab.artist2_id)
+    @collab_categories = []
+    @collab_pictures.each do |pic|
+      pic.categories.each do |category|
+        @collab_categories.push(category.name)
+      end
+    end
+    @collab_categories.uniq!
   end
 
   def update
