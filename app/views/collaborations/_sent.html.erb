@@ -1,3 +1,8 @@
+<% if @sent_pending.count == 0 %>
+  <div class="no_request">No request sent</div>
+  <%= link_to "Get inspired", feed_path, class: "btn btn-browse" %>
+<% end %>
+
 <% @sent_pending.reverse.each do |collab| %>
             <div class="card-collab-pending">
               <div class="collab-intro mx-2">
