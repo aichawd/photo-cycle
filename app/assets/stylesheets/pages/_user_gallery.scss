@@ -39,7 +39,7 @@
     text-decoration: none;
     font-family: 'Syne', sans-serif;
     position: relative;
-    font-size: 12px;
+    font-size: 15px;
     border-radius: 4px;
     color: white;
     background-color: transparent;
@@ -97,10 +97,11 @@
     justify-content: space-evenly;
     color: white;
     flex-direction: row;
-    padding-left: 78px;
+
     letter-spacing: 1px;
     font-size: 15px;
     margin: none;
+    padding: 8px 15px;
   }
 
   .banner-container {
