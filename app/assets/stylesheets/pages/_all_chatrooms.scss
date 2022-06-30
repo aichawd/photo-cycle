@@ -1,5 +1,16 @@
+
+
+.head-avatar {
+  width: 75px;
+  height: 75px;
+  border-radius: 100px;
+  display: flex;
+}
+
+
 .user_list {
-  width: 30%;
+  margin-left: 150px;
+  width: 20%;
   height: calc(100vh - 92px);
   background-color:#3B3E49;
   overflow-x: hidden;
@@ -18,15 +29,17 @@
 
 .chatroom_header {
   h1 {
-    text-align: center;
     width: 100%;
     margin: 0;
+    padding-top: 15px;
+    padding-left: 20px;
   }
   position: sticky;
   z-index: 1000;
   top: 0;
-  padding: 10px 20px;
-  background-color:  #e6e6e6
+  padding-top: 10px;
+  padding-left: 500px;
+  background-color:  #EFF3F7
   ;
   display: flex;
   border-radius: 8px;
@@ -35,7 +48,8 @@
 
 
 #conversation {
-  width: 70%;
+  margin-right: 150px ;
+  width: 80%;
   background-color: #EFF3F7;
   height: calc(100vh - 92px);
 
@@ -80,6 +94,7 @@
  margin: 15px;
  padding: 15px;
   .message-container {
+    margin-top: 10px;
     position: relative;
     background-color:#58B666;
     width: 300px;
@@ -90,6 +105,7 @@
     text-align: left;
     p {
       color: #F6EEF5;
+      font-size: 20px;
     }
   }
 
