@@ -2620,3 +2620,111 @@ collab_pic_category = PhotoCategory.new
 collab_pic_category.picture = collab_pic
 collab_pic_category.category = forest
 collab_pic_category.save!
+
+
+#collab Bruno X Kenza
+
+collab = Collaboration.new(name: 'Under the snow', artist1: bruno, artist2: kenza, status: 1)
+collab.save!
+
+collab_pic = Picture.new
+collab_pic.collaboration = collab
+puts "Creating photo..."
+img_url = 'https://images.unsplash.com/photo-1518374895823-ee01662288c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80'
+file = URI.open(img_url)
+collab_pic.photo.attach(io: file, filename: "#{collab_pic.id}.jpg", content_type: 'image/jpg')
+collab_pic.user = paul
+collab_pic.save!
+collab_pic_category = PhotoCategory.new
+collab_pic_category.picture = collab_pic
+collab_pic_category.category = architecture
+collab_pic_category.save!
+collab_pic_category = PhotoCategory.new
+collab_pic_category.picture = collab_pic
+collab_pic_category.category = polar
+collab_pic_category.save!
+
+collab_pic = Picture.new
+collab_pic.collaboration = collab
+puts "Creating photo..."
+img_url = 'https://images.unsplash.com/photo-1611602132416-da2045990f76?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
+file = URI.open(img_url)
+collab_pic.photo.attach(io: file, filename: "#{collab_pic.id}.jpg", content_type: 'image/jpg')
+collab_pic.user = paul
+collab_pic.save!
+collab_pic_category = PhotoCategory.new
+collab_pic_category.picture = collab_pic
+collab_pic_category.category = architecture
+collab_pic_category.save!
+collab_pic_category = PhotoCategory.new
+collab_pic_category.picture = collab_pic
+collab_pic_category.category = polar
+collab_pic_category.save!
+
+collab_pic = Picture.new
+collab_pic.collaboration = collab
+puts "Creating photo..."
+img_url = 'https://images.unsplash.com/photo-1519422368538-125f62622596?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
+file = URI.open(img_url)
+collab_pic.photo.attach(io: file, filename: "#{collab_pic.id}.jpg", content_type: 'image/jpg')
+collab_pic.user = paul
+collab_pic.save!
+collab_pic_category = PhotoCategory.new
+collab_pic_category.picture = collab_pic
+collab_pic_category.category = architecture
+collab_pic_category.save!
+collab_pic_category = PhotoCategory.new
+collab_pic_category.picture = collab_pic
+collab_pic_category.category = polar
+collab_pic_category.save!
+
+collab_pic = Picture.new
+collab_pic.collaboration = collab
+puts "Creating photo..."
+img_url = 'https://images.unsplash.com/photo-1545631828-c9023a782bd2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=343&q=80'
+file = URI.open(img_url)
+collab_pic.photo.attach(io: file, filename: "#{collab_pic.id}.jpg", content_type: 'image/jpg')
+collab_pic.user = paul
+collab_pic.save!
+collab_pic_category = PhotoCategory.new
+collab_pic_category.picture = collab_pic
+collab_pic_category.category = architecture
+collab_pic_category.save!
+collab_pic_category = PhotoCategory.new
+collab_pic_category.picture = collab_pic
+collab_pic_category.category = polar
+collab_pic_category.save!
+
+collab_pic = Picture.new
+collab_pic.collaboration = collab
+puts "Creating photo..."
+img_url = 'https://images.unsplash.com/photo-1576837841473-320cd3fc8a19?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
+file = URI.open(img_url)
+collab_pic.photo.attach(io: file, filename: "#{collab_pic.id}.jpg", content_type: 'image/jpg')
+collab_pic.user = paul
+collab_pic.save!
+collab_pic_category = PhotoCategory.new
+collab_pic_category.picture = collab_pic
+collab_pic_category.category = architecture
+collab_pic_category.save!
+collab_pic_category = PhotoCategory.new
+collab_pic_category.picture = collab_pic
+collab_pic_category.category = polar
+collab_pic_category.save!
+
+collab_pic = Picture.new
+collab_pic.collaboration = collab
+puts "Creating photo..."
+img_url = 'https://images.unsplash.com/photo-1610928290695-64e621f6a2f8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80'
+file = URI.open(img_url)
+collab_pic.photo.attach(io: file, filename: "#{collab_pic.id}.jpg", content_type: 'image/jpg')
+collab_pic.user = paul
+collab_pic.save!
+collab_pic_category = PhotoCategory.new
+collab_pic_category.picture = collab_pic
+collab_pic_category.category = architecture
+collab_pic_category.save!
+collab_pic_category = PhotoCategory.new
+collab_pic_category.picture = collab_pic
+collab_pic_category.category = polar
+collab_pic_category.save!
