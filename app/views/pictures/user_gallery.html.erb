@@ -31,7 +31,7 @@
     <div class="d-flex" style="margin-left: 78px">
       <% if @user != current_user %>
         <button type="button" class="add-photo-btn-user-collab" data-bs-toggle="modal" data-bs-target="#collabModal">
-          Collaborate →
+         Collaborate →
         </button>
         <% end %>
       <% if @user == current_user %>
@@ -39,7 +39,7 @@
           +Add photo
         </button>
       <% else %>
-        <%= link_to 'Contact', chatroom_path(@single_chatroom), class: "add-photo-btn-user" %>
+        <%= link_to 'Contact → ', chatroom_path(@single_chatroom), class: "add-photo-btn-user" %>
       <% end %>
     </div>
     </div>
