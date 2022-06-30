@@ -3,13 +3,17 @@ import { Controller } from "stimulus"
 export default class extends Controller {
   static targets = [ "tag", "image" ]
 
-  connect() {
-    console.log("controller connected")
-  }
-
-  all() {
+  allImages(event) {
     this.imageTargets.forEach(element => {
       element.classList.remove("d-none")
+    });
+    this.resetTags();
+    event.currentTarget.classList.add("selected")
+  }
+
+  resetTags() {
+    this.tagTargets.forEach(element => {
+      element.classList.remove("selected")
     });
   }
 
@@ -19,7 +23,7 @@ export default class extends Controller {
     const imagesToHide = this.imageTargets.filter((image) => {
       return !image.dataset.categories.match(regex)
     })
-    this.all()
+    this.allImages(event)
     imagesToHide.forEach(element => {
       element.classList.add("d-none")
     });
