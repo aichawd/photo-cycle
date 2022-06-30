@@ -9,16 +9,13 @@
       </h1>
 
       <h3>Bio: artichette, tichette de 2, tichette de 3, tichette de 21, michette, <br> tchiledeque, mique,sganabadarlane, résiné et raitournelle..</h3>
-      <p>
-        <%= @user_pictures.count %> photos
-      </p>
+      <div class="d-flex" style="margin-top: 10px;">
       <p class="tags">
         <span class="add-photo-btn-tags"
               data-user-search-target="tag"
               data-action="click->user-search#all">
           All
         </span>
-
         <% @user_categories.each do |cat_name| %>
           <span class="add-photo-btn-tags"
                 data-user-search-target="tag"
@@ -27,11 +24,15 @@
             <%= cat_name %>
           </span>
         <% end %>
+      <p>
+        <%= @user_pictures.count %> photos
       </p>
+      </p>
+      </div>
     <div class="d-flex" style="margin-left: 78px">
       <% if @user != current_user %>
         <button type="button" class="add-photo-btn-user-collab" data-bs-toggle="modal" data-bs-target="#collabModal">
-          Collaborate →
+         Collaborate
         </button>
         <% end %>
       <% if @user == current_user %>
