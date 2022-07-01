@@ -7,8 +7,8 @@
         <% end %>
         <%= @user.first_name %> <%= @user.last_name %>
       </h1>
-      <h3>Bio: <%= @user.bio %></h3>
-      <p>
+      <h3 style="margin-bottom: 0;">Bio: <%= @user.bio %></h3>
+      <p style="margin-bottom: 0;">
         <%= @user_pictures.count %> photos
       </p>
       <p class="tags">
@@ -26,7 +26,7 @@
           </span>
         <% end %>
       </p>
-      <div class="d-flex">
+      <div class="d-flex" style="margin-left:15px;">
         <% if @user != current_user %>
           <button type="button" class="add-photo-btn-user-collab" data-bs-toggle="modal" data-bs-target="#collabModal">
             Collaborate →
