@@ -12,34 +12,31 @@ import { Controller } from "stimulus"
 export default class extends Controller {
   static targets = [ "form", "input", 'picturesContainer' ]
 
-  connect() {
-    console.log(this.picturesContainerTarget)
-  }
+
 
   search(event) {
     event.preventDefault()
     const url = this.formTarget.action
-    const urlWithQuery = `${url}?query=${this.inputTarget.value}`
+    const urlWithQuery = `feed?query=${this.inputTarget.value}`
 
-    fetch(urlWithQuery, {})
-    .then(response => response.json())
+    fetch(urlWithQuery, {headers: { "Accept": "text/plain"} })
+    .then(response => response.text())
     .then((data) => {
-      console.log(data)
-      this.picturesContainerTarget.innerHTML = data.html
+
+      this.picturesContainerTarget.innerHTML = data
     })
   }
 
   searchByTag(event) {
     event.preventDefault()
     const tag = event.currentTarget.dataset.tagName
-    const url = this.formTarget.action
-    const urlWithQuery = `${url}?query=${tag}`
+    const urlWithQuery = `feed?query=${tag}`
 
-    fetch(urlWithQuery, {})
-    .then(response => response.json())
+    fetch(urlWithQuery, {headers: { "Accept": "text/plain"}  } )
+    .then(response => response.text())
     .then((data) => {
-      console.log(data)
-      this.picturesContainerTarget.innerHTML = data.html
+
+      this.picturesContainerTarget.innerHTML = data
     })
   }
 }

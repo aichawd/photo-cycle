@@ -1,4 +1,4 @@
-<% pictures.shuffle.each do |pic| %>
+<% pictures.take(50).shuffle.each do |pic| %>
   <div class="card-category masonry-element">
     <%= cl_image_tag pic.photo.key, style: 'height: 100%;' %>
     <div class="tags">
