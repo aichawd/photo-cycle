@@ -1,0 +1,5 @@
+meta_product_name: "Photocycle"
+meta_title: "Photocycle - The #1 photographer community"
+meta_description: "Photocycle is a community for photographers of all specialties to discuss everything photography, from techniques to equipment, and collaborate to produce work that transcends usual boundaries."
+meta_image: "photographerscollab.jpg" # should exist in `app/assets/images/`
+twitter_account: "@photocycle_community"   # required for Twitter Cards
