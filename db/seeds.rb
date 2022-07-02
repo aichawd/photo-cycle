@@ -2,6 +2,7 @@ require "open-uri"
 require "nokogiri"
 
 PhotoCategory.destroy_all
+Collaboration.destroy_all
 Picture.destroy_all
 Category.destroy_all
 User.destroy_all
@@ -80,6 +81,16 @@ polar = Category.create(name: "Polar") #Bruno
 ancient = Category.create(name: "Ancient") #nadia
 
 architecture = Category.create(name: 'Architecture')
+
+
+# MESSAGE SEEDS
+puts "Creating Nadia-Bruno chatroom"
+chatroomnb = Chatroom.create(first_user_id: nadia.id, second_user_id: bruno.id)
+chatroomnb.save!
+
+puts "Creating Nadia-Bruno message"
+nadia_bruno = Message.create(chatroom_id: chatroomnb.id, sender_id: nadia.id, content: "Hey Bruno, j'ai vu que tu étais allé en Arctique. Est-ce qu'il faisait froid?")
+nadia_bruno.save!
 
 
 #ok
@@ -2516,6 +2527,12 @@ all_photos.each do |pic|
 end
 
 # COLLABORATIONS SEEDS
+puts "Creating Nadia-Bruno collab request"
+collab = Collaboration.new(name: 'Vestiges', artist1_id: nadia.id, artist2_id: bruno.id, status: 0)
+collab.description = "Hello Bruno, je vais en bientôt en Antarctique pour photographier des vestiges. Intéressé?"
+collab.save!
+
+puts "Creating Paul-Aicha collab"
 collab = Collaboration.new(name: 'Breathe', artist1: paul, artist2: aicha, status: 1)
 collab.story = "How do you feel in the middle of trees? Peaceful, serene, and content.
 Through Breathe, Paul Portier and Aïcha Diagne merge their talents to remind us of the
@@ -2785,4 +2802,3 @@ collab_pic_category = PhotoCategory.new
 collab_pic_category.picture = collab_pic
 collab_pic_category.category = polar
 collab_pic_category.save!
-
