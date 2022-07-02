@@ -121,10 +121,10 @@
               <% collab = Collaboration.find(pic.collaboration_id) %>
               <%= link_to collab.name, collaboration_path(collab), class: 'collab-name' %>
               <%= link_to gallery_path(collab.artist1.username), class: 'collab-av1 avatar' do %>
-                <%= cl_image_tag collab.artist1.photo.key %>
+                <%= cl_image_tag collab.artist1.photo.key, style: 'border-radius:50%;' %>
               <% end %>
               <%= link_to gallery_path(collab.artist2.username), class: 'collab-av2 avatar' do %>
-                <%= cl_image_tag collab.artist2.photo.key %>
+                <%= cl_image_tag collab.artist2.photo.key, style: 'border-radius:50%;' %>
               <% end %>
               <div id="gallery_modal" class="modal" data-controller="modal" data-view-photo-target="modal">
                 <div class="modal-dialog">
