@@ -2786,19 +2786,3 @@ collab_pic_category.picture = collab_pic
 collab_pic_category.category = polar
 collab_pic_category.save!
 
-collab_pic = Picture.new
-collab_pic.collaboration = collab
-puts "Creating photo..."
-img_url = 'https://images.unsplash.com/photo-1583381707593-d78e678c8d3d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
-file = URI.open(img_url)
-collab_pic.photo.attach(io: file, filename: "#{collab_pic.id}.jpg", content_type: 'image/jpg')
-collab_pic.user = bruno
-collab_pic.save!
-collab_pic_category = PhotoCategory.new
-collab_pic_category.picture = collab_pic
-collab_pic_category.category = architecture
-collab_pic_category.save!
-collab_pic_category = PhotoCategory.new
-collab_pic_category.picture = collab_pic
-collab_pic_category.category = polar
-collab_pic_category.save!
