@@ -226,7 +226,7 @@
 
 .photo-behavior {
 
-  li {
+  .user-pic {
     position: relative;
 
     .dropdown {
@@ -238,14 +238,9 @@
       visibility:hidden;
       z-index: 10;
     }
-
-    .collab-name{
-      visibility:hidden;
-      z-index: 10;
-    }
   }
 
-  li:hover {
+  .user-pic:hover {
     .dropdown {
       visibility:visible;
       z-index: 10;
@@ -276,16 +271,6 @@
       z-index: 10;
       color: black;
       }
-
-    .collab-name{
-      visibility: visible;
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      color: white;
-      font-size: 12px;
-      text-decoration: none;
-    }
   }
 
   .dropdown {
@@ -303,5 +288,37 @@
   .fa-edit {
     font-size: 20px;
     color: white;
+  }
+}
+
+.collab-pic {
+  position: relative;
+
+  .collab-name{
+    z-index: 10;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    color: white;
+    font-size: 12px;
+    text-decoration: none;
+  }
+
+  .collab-av1{
+    z-index: 10;
+    position: absolute;
+    border-radius: 50%;
+    top: 8px;
+    right: 50px;
+    text-decoration: none;
+  }
+
+  .collab-av2{
+    z-index: 10;
+    position: absolute;
+    border-radius: 50%;
+    top: 8px;
+    right: 12px;
+    text-decoration: none;
   }
 }
