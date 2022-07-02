@@ -29,15 +29,10 @@ class PicturesController < ApplicationController
   def user_feed
     @pictures = Picture.all.includes(photo_categories: :category)
     if params[:query]
-      @pictures = @pictures.joins(:photo_categories, :categories).where('categories.name ILIKE ?', "%#{params[:query]}%")
+      @pictures = @pictures.joins(:photo_categories, :categories).where('categories.name ILIKE ?', "%#{params[:query]}%").distinct
     end
     respond_to do |format|
-      html = render_to_string partial: 'pictures/user_feed_photos', locals: { pictures: @pictures }, format: [:html], layout: false
-      format.json {
-        render json: {
-          html: html
-        }
-      }
+      format.text { render partial: 'pictures/user_feed_photos', locals: { pictures: @pictures }, formats: [:html] }
       format.html
     end
   end
